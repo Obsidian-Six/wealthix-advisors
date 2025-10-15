@@ -1,0 +1,24 @@
+%%  Next.js CI/CD Workflow
+flowchart TD
+  %% Style Definitions
+  classDef trigger fill:#0d47a1,stroke:#1976d2,stroke-width:2px,color:#ffffff,font-weight:700;
+  classDef stage fill:#1976d2,stroke:#42a5f5,stroke-width:1.5px,color:#e3f2fd,font-weight:600;
+  classDef action fill:#0288d1,stroke:#4fc3f7,stroke-width:1.2px,color:#ffffff,font-weight:500;
+  classDef deploy fill:#2e7d32,stroke:#66bb6a,stroke-width:2px,color:#e8f5e9,font-weight:700;
+
+  %% Nodes
+  trigger["Push to main"]:::trigger
+  checkout["Checkout source code"]:::stage
+  setup["Setup Node.js 22"]:::stage
+  cache["Restore .next cache"]:::action
+  install["Install dependencies (npm ci)"]:::action
+  lint["Lint code"]:::action
+  typecheck["TypeScript typecheck"]:::action
+  test["Run tests (Jest)"]:::action
+  build["Build project (next export)"]:::action
+  prepare["Prepare out/ & .nojekyll"]:::action
+  deploy["Deploy to gh-pages branch"]:::deploy
+
+  %% Flow Connections
+  trigger --> checkout --> setup --> cache --> install
+  install --> lint --> typecheck --> test --> build --> prepare --> deploy

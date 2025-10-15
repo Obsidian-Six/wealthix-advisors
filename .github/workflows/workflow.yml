@@ -1,0 +1,75 @@
+name: CI - Test, Build, and Deploy to GitHub Pages
+
+on:
+    push:
+        branches:
+            - main
+
+permissions:
+    contents: write
+
+concurrency:
+    group: gh-pages-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Use Node.js 22
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+                  cache: npm
+
+            - name: Cache Next.js build cache
+              uses: actions/cache@v4
+              with:
+                  path: .next/cache
+                  key: next-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: |
+                      next-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+                      next-${{ runner.os }}-
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Lint
+              run: npm run lint --if-present
+
+            - name: Set BASE_PATH (org repo)
+              run: echo "BASE_PATH=/wealthix-advisors" >> $GITHUB_ENV
+
+            - name: Typecheck
+              run: npx tsc --noEmit
+
+            - name: Test
+              run: npm test --silent
+
+            - name: Build
+              env:
+                  BASE_PATH: ${{ env.BASE_PATH }}
+              run: |
+                  echo "Using BASE_PATH=$BASE_PATH"
+                  npm run build
+
+            - name: Prepare artifacts for Pages
+              run: |
+                  # Only keep necessary files: exported site and .nojekyll
+                  mkdir -p out
+                  find out -name "*.map" -type f -delete || true
+                  touch out/.nojekyll
+
+            - name: Deploy to gh-pages branch
+              uses: peaceiris/actions-gh-pages@v4
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./out
+                  publish_branch: gh-pages
+                  force_orphan: true
+                  commit_message: |
+                      Deploy: ${{ github.sha }}
+                      Build from ${{ github.workflow }} run ${{ github.run_number }}

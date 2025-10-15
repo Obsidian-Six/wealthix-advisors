@@ -1,13 +1,18 @@
 import type { NextConfig } from "next";
-
+const isProd = process.env.NODE_ENV === "production";
 const nextConfig: NextConfig = {
   // Static export for GitHub Pages
   output: "export",
   trailingSlash: true,
-  images: {
-    // GitHub Pages doesn't support Next.js Image Optimization CDN
-    unoptimized: true,
-  },
+  images: isProd
+    ? {
+        unoptimized: true,
+        loader: "custom",
+        loaderFile: "./lib/loaders/image-loader.ts",
+      }
+    : {
+        unoptimized: true,
+      },
   // Allow setting basePath/assetPrefix via env (useful for GitHub Pages project sites)
   // For GitHub Pages, set BASE_PATH to "/<repo-name>"
   basePath:

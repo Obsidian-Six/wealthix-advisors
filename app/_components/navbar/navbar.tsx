@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import Logo from "@/public/logo.png";
 
 export default function Navbar() {
   return (
     <nav>
       <Link href="/">
-        <Image src="/logo.png" alt="Logo" width={221} height={48} priority />
+        <Image src={Logo} alt="Logo" width={221} height={48} priority />
       </Link>
       <ul>
         <li>

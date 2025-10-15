@@ -55,5 +55,6 @@
 .hero {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     linear-gradient(90deg, rgba(0, 0, 0, 0) -7.6%, rgba(0, 0, 0, 0.6) 71.74%),
-    url("/hero-bg.jpg") center/cover no-repeat;
+    url("/wealthix-advisors/hero-bg.jpg") center/cover no-repeat;
+  height: 100vh;
 }

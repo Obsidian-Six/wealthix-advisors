@@ -8,7 +8,7 @@ function run(cmd, args = []) {
     const child = spawn(cmd, args, {
       stdio: "inherit",
       shell: true,
-      env: { ...process.env, BASE_PATH },
+      env: { ...process.env, BASE_PATH, NEXT_PUBLIC_BASE_PATH: BASE_PATH },
     });
     child.on("exit", (code) => {
       if (code === 0) resolve(undefined);

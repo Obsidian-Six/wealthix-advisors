@@ -41,7 +41,9 @@ jobs:
               run: npm run lint --if-present
 
             - name: Set BASE_PATH (org repo)
-              run: echo "BASE_PATH=/wealthix-advisors" >> $GITHUB_ENV
+              run: |
+                  echo "BASE_PATH=/wealthix-advisors" >> $GITHUB_ENV
+                  echo "NEXT_PUBLIC_BASE_PATH=/wealthix-advisors" >> $GITHUB_ENV
 
             - name: Typecheck
               run: npx tsc --noEmit
@@ -52,8 +54,10 @@ jobs:
             - name: Build
               env:
                   BASE_PATH: ${{ env.BASE_PATH }}
+                  NEXT_PUBLIC_BASE_PATH: ${{ env.NEXT_PUBLIC_BASE_PATH }}
               run: |
                   echo "Using BASE_PATH=$BASE_PATH"
+                  echo "Using NEXT_PUBLIC_BASE_PATH=$NEXT_PUBLIC_BASE_PATH"
                   npm run build
 
             - name: Prepare artifacts for Pages

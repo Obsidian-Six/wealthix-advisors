@@ -51,6 +51,32 @@ The high-level CI workflow is illustrated below (source: `docs/workflow.mmd`):
 
 ![CI Workflow for GitHub Pages](docs/workflow.png)
 
+## Images on GitHub Pages (no manual basePath needed)
+
+This project deploys to GitHub Pages under `/wealthix-advisors`. To avoid 404s for images at a non-root path, we configured a global custom loader for `next/image`:
+
+- `next.config.ts`:
+  - `output: 'export'`, `images.unoptimized: true`
+  - `images.loader: 'custom'`, `images.loaderFile: './lib/loaders/image-loader.ts'`
+- `lib/loaders/image-loader.ts` prefixes app-relative `src` values with `NEXT_PUBLIC_BASE_PATH`.
+- CI sets both `BASE_PATH` and `NEXT_PUBLIC_BASE_PATH` to `/wealthix-advisors` during build. Locally, these are empty.
+
+Usage stays the same—just use `next/image` normally:
+
+```tsx
+import Image from 'next/image'
+
+export default function Example() {
+   return <Image src="/logo.svg" alt="Logo" width={120} height={36} />
+}
+```
+
+Edge cases and notes:
+
+- Absolute URLs (https://...) and data URIs are left untouched by the loader.
+- If you use plain `<img>`, switch to `next/image` to benefit from the loader.
+- `basePath` and `assetPrefix` are still applied globally by `next.config.ts` for routes and bundled assets.
+
 If you use a custom domain:
 
 1. Add your domain to `Settings > Pages` in GitHub.

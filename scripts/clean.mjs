@@ -3,7 +3,7 @@ import { rm, access } from "node:fs/promises";
 import { constants } from "node:fs";
 import readline from "node:readline";
 
-const targets = [".next", ".swc", "out", "node_modules", "coverage"];
+const targets = [".next", ".swc", "out", "coverage"];
 
 function ask(question) {
   const rl = readline.createInterface({

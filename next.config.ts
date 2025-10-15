@@ -7,8 +7,6 @@ const nextConfig: NextConfig = {
   images: {
     // GitHub Pages doesn't support Next.js Image Optimization CDN
     unoptimized: true,
-    loader: "custom",
-    loaderFile: "./lib/loaders/image-loader.ts",
   },
   // Allow setting basePath/assetPrefix via env (useful for GitHub Pages project sites)
   // For GitHub Pages, set BASE_PATH to "/<repo-name>"

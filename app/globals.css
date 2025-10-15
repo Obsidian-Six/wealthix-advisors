@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Fonts */
+  --font-body: "Inter", system-ui, ui-sans-serif, sans-serif;
+  --font-heading: "Clash Display", system-ui, ui-sans-serif, sans-serif;
+  --font-inter: "Inter", system-ui, ui-sans-serif, sans-serif;
+  --font-clash: "Clash Display", system-ui, ui-sans-serif, sans-serif;
+
+  /* Colors */
+  --color-primary: #00adef;
+  --color-secondary: #e5f7fd;
+  --color-black: #080808;
+  --color-white: #ffffff;
+  --color-gray-light: #d9d9d9;
+  --color-gray-dark: #767676;
+
+  /* Typography scale */
+  --size-h1: 56px;
+  --size-h2: 48px;
+  --size-h3: 40px;
+  --size-h4: 32px;
+  --size-h5: 24px;
+  --size-body: 16px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  body {
+    @apply bg-white text-black font-body;
+  }
+  header {
+    @apply fixed top-0 left-0 w-full z-50 bg-white shadow-[4px_4px_4px_0px_#D9D9D940];
+  }
+  nav {
+    @apply container mx-auto flex justify-between items-center py-2.5 px-16;
+  }
+  nav > a {
+    @apply border-b-0 focus:outline-none focus:border-b-2 focus:border-primary transition duration-100;
+  }
+  nav > ul {
+    @apply flex justify-end items-center gap-4;
+  }
+  nav > ul > li > a {
+    @apply list-none font-semibold text-base text-black hover:text-primary hover:underline hover:underline-offset-[16%] hover:decoration-[10.5%] focus:outline-none focus:text-primary focus:underline focus:underline-offset-[16%] focus:decoration-[10.5%] transition duration-100;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  section {
+    @apply container mx-auto;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+}
+
+.hero {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(90deg, rgba(0, 0, 0, 0) -7.6%, rgba(0, 0, 0, 0.6) 71.74%),
+    url("/hero-bg.jpg") center/cover no-repeat;
 }

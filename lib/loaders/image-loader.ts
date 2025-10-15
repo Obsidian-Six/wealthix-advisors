@@ -1,6 +1,5 @@
 // Custom loader for next/image to work under GitHub Pages basePath
 // It prefixes app-relative src paths with NEXT_PUBLIC_BASE_PATH.
-
 type LoaderParams = {
   src: string;
   width: number;

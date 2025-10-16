@@ -45,6 +45,9 @@
   nav > a {
     @apply border-b-0 focus:outline-none focus:border-b-2 focus:border-primary transition duration-100;
   }
+  nav > a > img {
+    @apply w-[221px] h-12;
+  }
   nav > ul {
     @apply flex justify-end items-center gap-4;
   }
@@ -71,6 +74,18 @@
   }
   h3 {
     @apply text-lg font-medium font-clash text-white;
+  }
+  p {
+    @apply text-sm/[150%] font-normal text-black;
+  }
+  figure {
+    @apply relative rounded-3xl overflow-hidden;
+  }
+  img {
+    @apply w-full h-full object-cover object-center;
+  }
+  figcaption {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-sm font-normal -z-50;
   }
   button {
     @apply bg-[radial-gradient(50%_78.68%_at_50%_100%,_#5ED3FF_13.36%,_#00ADEF_78.53%)] text-white font-inter font-semibold text-sm uppercase p-5 rounded-[75px] flex items-center justify-between gap-3 cursor-pointer;
@@ -142,7 +157,7 @@
     @apply h-8 w-8 inline-block mr-2;
   }
   .core-services-card p {
-    @apply text-sm/[150%] font-normal ms-8;
+    @apply text-white text-sm/[150%] font-normal ms-8;
   }
   .core-services::before,
   .core-services::after {
@@ -160,5 +175,19 @@
   }
   .core-services::after {
     @apply w-96 h-96 -bottom-[12%] -right-[10%] -z-10;
+  }
+
+  /* Trusted Experts Styles */
+  .trusted-experts {
+    @apply my-20 container mx-auto max-h-full xl:max-h-[550px] flex flex-col flex-wrap gap-8 items-center xl:items-start bg-secondary py-12 px-16 rounded-lg;
+  }
+  .trusted-experts > h2 {
+    @apply max-w-full xl:max-w-xl;
+  }
+  .trusted-experts > p {
+    @apply max-w-full xl:max-w-lg;
+  }
+  .trusted-experts > figure {
+    @apply w-auto h-auto xl:w-[526px] xl:h-[424px];
   }
 }

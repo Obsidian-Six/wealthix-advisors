@@ -22,6 +22,8 @@
   --text-3xl--line-height: 125%;
   --text-3xl--letter-spacing: 0;
   --text-2xl: 48px;
+  --text-2xl--line-height: 100%;
+  --text-2xl--letter-spacing: 0;
   --text-xl: 40px;
   --text-lg: 32px;
   --text-base: 24px;
@@ -50,7 +52,7 @@
     @apply list-none font-semibold text-sm text-black hover:text-primary hover:underline hover:underline-offset-[16%] hover:decoration-[10.5%] focus:outline-none focus:text-primary focus:underline focus:underline-offset-[16%] focus:decoration-[10.5%] transition duration-100;
   }
   main {
-    @apply mt-28;
+    @apply mt-28 overflow-hidden;
   }
   section {
     @apply container mx-auto;
@@ -61,6 +63,15 @@
   h1 > span {
     @apply text-primary;
   }
+  h2 {
+    @apply text-2xl font-bold font-clash text-black;
+  }
+  h2 > span {
+    @apply text-primary;
+  }
+  h3 {
+    @apply text-lg font-medium font-clash text-white;
+  }
   button {
     @apply bg-[radial-gradient(50%_78.68%_at_50%_100%,_#5ED3FF_13.36%,_#00ADEF_78.53%)] text-white font-inter font-semibold text-sm uppercase p-5 rounded-[75px] flex items-center justify-between gap-3 cursor-pointer;
   }
@@ -69,7 +80,7 @@
 @layer components {
   /* Hero Section Styles */
   .hero {
-    @apply h-[600px] flex items-center justify-between px-16 py-8 rounded-xl;
+    @apply container mx-auto h-[600px] flex items-center justify-between px-16 py-8 rounded-xl;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       linear-gradient(90deg, rgba(0, 0, 0, 0) -7.6%, rgba(0, 0, 0, 0.6) 71.74%),
       url("/wealthix-advisors/hero-bg.jpg") center/cover no-repeat;
@@ -105,5 +116,49 @@
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
+  }
+
+  /* Core Services Styles */
+  .core-services {
+    @apply my-20 container mx-auto relative;
+  }
+  .core-services > h2 {
+    @apply max-w-2xl mx-auto text-center mb-16;
+  }
+  .core-services-container {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto justify-items-center;
+  }
+  .core-services-card {
+    @apply bg-black text-white max-w-lg p-8 rounded-3xl border border-primary backdrop-blur-sm;
+  }
+  .core-services-card:nth-child(2),
+  .core-services-card:nth-child(3) {
+    @apply bg-primary;
+  }
+  .core-services-card h3 {
+    @apply mb-4;
+  }
+  .core-services-card > h3 > svg {
+    @apply h-8 w-8 inline-block mr-2;
+  }
+  .core-services-card p {
+    @apply text-sm/[150%] font-normal ms-8;
+  }
+  .core-services::before,
+  .core-services::after {
+    content: "";
+    @apply absolute rounded-full;
+    background: radial-gradient(
+        164.2% 164.2% at 0% -20.72%,
+        #00adef 18.45%,
+        #ffffff 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  }
+  .core-services::before {
+    @apply w-54 h-54 top-[10%] -left-[5%] -z-10;
+  }
+  .core-services::after {
+    @apply w-96 h-96 -bottom-[12%] -right-[10%] -z-10;
   }
 }

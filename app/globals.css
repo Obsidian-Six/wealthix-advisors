@@ -12,16 +12,22 @@
   --color-secondary: #e5f7fd;
   --color-black: #080808;
   --color-white: #ffffff;
+  --color-white-85: #ffffffd9;
+  --color-white-10: #ffffff1a;
   --color-gray-light: #d9d9d9;
   --color-gray-dark: #767676;
 
   /* Typography scale */
-  --size-h1: 56px;
-  --size-h2: 48px;
-  --size-h3: 40px;
-  --size-h4: 32px;
-  --size-h5: 24px;
-  --size-body: 16px;
+  --text-3xl: 56px;
+  --text-3xl--line-height: 125%;
+  --text-3xl--letter-spacing: 0;
+  --text-2xl: 48px;
+  --text-xl: 40px;
+  --text-lg: 32px;
+  --text-base: 24px;
+  --text-sm: 16px;
+  --text-sm--line-height: 100%;
+  --text-sm--letter-spacing: 0;
 }
 
 @layer base {
@@ -41,20 +47,63 @@
     @apply flex justify-end items-center gap-4;
   }
   nav > ul > li > a {
-    @apply list-none font-semibold text-base text-black hover:text-primary hover:underline hover:underline-offset-[16%] hover:decoration-[10.5%] focus:outline-none focus:text-primary focus:underline focus:underline-offset-[16%] focus:decoration-[10.5%] transition duration-100;
+    @apply list-none font-semibold text-sm text-black hover:text-primary hover:underline hover:underline-offset-[16%] hover:decoration-[10.5%] focus:outline-none focus:text-primary focus:underline focus:underline-offset-[16%] focus:decoration-[10.5%] transition duration-100;
   }
-
+  main {
+    @apply mt-28;
+  }
   section {
     @apply container mx-auto;
+  }
+  h1 {
+    @apply text-3xl font-bold font-clash text-white;
+  }
+  h1 > span {
+    @apply text-primary;
+  }
+  button {
+    @apply bg-[radial-gradient(50%_78.68%_at_50%_100%,_#5ED3FF_13.36%,_#00ADEF_78.53%)] text-white font-inter font-semibold text-sm uppercase p-5 rounded-[75px] flex items-center justify-between gap-3 cursor-pointer;
   }
 }
 
 @layer components {
-}
+  /* Hero Section Styles */
+  .hero {
+    @apply h-[600px] flex items-center justify-between px-16 py-8 rounded-xl;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      linear-gradient(90deg, rgba(0, 0, 0, 0) -7.6%, rgba(0, 0, 0, 0.6) 71.74%),
+      url("/wealthix-advisors/hero-bg.jpg") center/cover no-repeat;
+  }
+  .hero-left > h1 {
+    @apply max-w-[663px] mb-5;
+  }
+  .hero-right {
+    @apply max-w-[488px] flex flex-col gap-6;
+  }
+  .hero-right > p {
+    @apply text-white text-sm font-semibold uppercase mb-6;
+  }
+  .hero-right > p > span {
+    @apply text-primary;
+  }
+  .hero-right > ul {
+    @apply list-none text-white-85 text-sm font-medium flex justify-around flex-wrap gap-2;
+  }
+  .hero-right > ul > li {
+    @apply relative h-32 w-56 p-5 rounded-[20px] overflow-hidden 
+         bg-white-10 backdrop-blur-sm;
+  }
 
-.hero {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    linear-gradient(90deg, rgba(0, 0, 0, 0) -7.6%, rgba(0, 0, 0, 0.6) 71.74%),
-    url("/wealthix-advisors/hero-bg.jpg") center/cover no-repeat;
-  height: 100vh;
+  .hero-right > ul > li::before {
+    content: "";
+    @apply absolute inset-0 p-1 rounded-[20px] pointer-events-none;
+    background: linear-gradient(
+      108.19deg,
+      #fff 4.12%,
+      rgba(255, 255, 255, 0.4) 99.97%
+    );
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
 }

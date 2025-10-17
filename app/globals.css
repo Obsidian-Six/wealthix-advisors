@@ -264,4 +264,62 @@
   .choosing-figure {
     @apply w-[345px] h-[450px];
   }
+
+  /* Testimonial Styles */
+  .testimonials {
+    @apply my-20 container mx-auto p-8;
+  }
+  .testimonials > h2 {
+    @apply mb-16;
+  }
+  /* Testimonial Container to be worked as Carousel */
+  .testimonials-container {
+    @apply w-full flex gap-0 md:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  .testimonials-container::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+  .testimonials-container > li {
+    @apply snap-start flex-shrink-0 w-md;
+  }
+  .testimonial-card {
+    @apply w-xs md:w-md bg-[#f9f9f9] px-6 py-5 rounded-3xl flex flex-col gap-4;
+    box-shadow: 4px 4px 4px 0px #d9d9d940;
+  }
+  .testimonial-header {
+    @apply static flex justify-start items-center gap-2 bg-white p-2 rounded-xl shadow-none;
+  }
+  .testimonial-avatar {
+    @apply w-10 h-10 rounded-full object-cover object-center me-2;
+  }
+  .testimonial-name {
+    @apply font-medium text-sm text-black font-clash mb-1;
+  }
+  .testimonial-ratings-container {
+    @apply flex justify-start items-center gap-1;
+  }
+  .testimonial-text {
+    @apply text-sm/[150%] font-normal text-black;
+  }
+  .testimonial-footer {
+    @apply w-full flex justify-between items-center;
+  }
+  .testimonial-platform > img {
+    @apply w-5 h-5 object-contain object-center inline-block ms-1;
+  }
+
+  .testimonial-carousel {
+    @apply w-full flex justify-between items-center mt-8 bg-red-500 relative transform -translate-y-48;
+  }
+  .testimonial-carousel-control {
+    @apply absolute top-0 p-1;
+  }
+  .testimonial-carousel-control-left {
+    @apply -left-8;
+  }
+  .testimonial-carousel-control-right {
+    @apply -right-8;
+  }
 }

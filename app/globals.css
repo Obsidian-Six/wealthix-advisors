@@ -231,4 +231,37 @@
   .compliant-card > p {
     @apply text-sm/[150%] font-normal text-white;
   }
+
+  /* Choosing Section Styles */
+  .choosing {
+    @apply my-20 container mx-auto relative p-8 py-32 flex justify-center lg:justify-between items-start flex-wrap;
+  }
+  .choosing::before {
+    content: "";
+    @apply absolute top-0 left-1/2 -translate-x-1/2 w-screen h-full -z-50 bg-black;
+  }
+  .choosing::after {
+    content: "";
+    @apply absolute top-0 left-0 w-3/4 h-full -z-40 opacity-10;
+    background: url("/wealthix-advisors/choose-bg.svg") top/contain no-repeat;
+  }
+  .choosing > h2 {
+    @apply text-white w-full mb-16;
+  }
+  .choosing-container {
+    @apply flex flex-col lg:flex-row justify-center lg:justify-start items-start flex-wrap gap-1 lg:gap-2 w-full lg:w-3/5 xl:w-4/5 max-w-[850px] mb-16;
+  }
+  .choosing-container > li {
+    @apply max-w-full xl:max-w-[380px];
+  }
+  .choosing-card > h3 > svg {
+    @apply me-2 inline-block h-8 w-8;
+  }
+  .choosing-card > p {
+    @apply text-white mb-4;
+  }
+
+  .choosing-figure {
+    @apply w-[345px] h-[450px];
+  }
 }

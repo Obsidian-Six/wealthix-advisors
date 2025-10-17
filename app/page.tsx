@@ -1,3 +1,4 @@
+import Choosing from "./_components/choosing/choosing";
 import Compliant from "./_components/compliant/compliant";
 import CoreServices from "./_components/core-services/core-services";
 import Hero from "./_components/hero/hero";
@@ -10,6 +11,7 @@ export default function Home() {
       <CoreServices />
       <TrustedExperts />
       <Compliant />
+      <Choosing />
     </>
   );
 }

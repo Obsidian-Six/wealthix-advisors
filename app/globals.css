@@ -9,6 +9,7 @@
 
   /* Colors */
   --color-primary: #00adef;
+  --color-primary-10: #00adef1a;
   --color-primary-40: #00adef66;
   --color-secondary: #e5f7fd;
   --color-black: #080808;
@@ -90,8 +91,12 @@
   figcaption {
     @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-sm font-normal -z-50;
   }
-  button {
-    @apply bg-[radial-gradient(50%_78.68%_at_50%_100%,_#5ED3FF_13.36%,_#00ADEF_78.53%)] text-white font-inter font-semibold text-sm uppercase p-5 rounded-[75px] flex items-center justify-between gap-3 cursor-pointer;
+  button,
+  button[data-variant="solid"] {
+    @apply bg-[radial-gradient(50%_78.68%_at_50%_100%,_#5ED3FF_13.36%,_#00ADEF_78.53%)] hover:bg-[radial-gradient(97.72%_153.78%_at_50%_100%,_#5ED3FF_19.52%,_#00ADEF_82.44%)] hover:shadow-[0px_4px_4.7px_0px_#45434340] text-white font-inter font-semibold text-sm uppercase p-5 rounded-[75px] cursor-pointer transition-colors duration-300 ease-out;
+  }
+  button[data-variant="outline"] {
+    @apply bg-transparent bg-none border border-primary text-white;
   }
 }
 
@@ -106,6 +111,9 @@
   .hero-left > h1 {
     @apply max-w-[663px] mb-5;
   }
+  .hero-left > button {
+    @apply flex items-center justify-between gap-3;
+  }
   .hero-right {
     @apply max-w-[488px] flex flex-col gap-6;
   }
@@ -118,14 +126,16 @@
   .hero-right > ul {
     @apply list-none text-white-85 text-sm font-medium flex justify-around flex-wrap gap-2;
   }
+
+  /* Separated Styles for hover over 'li' for clarity */
   .hero-right > ul > li {
     @apply relative h-32 w-56 p-5 rounded-[20px] overflow-hidden 
-         bg-white-10 backdrop-blur-sm;
+         bg-white-10 backdrop-blur-sm transition-colors duration-300 ease-out;
   }
 
   .hero-right > ul > li::before {
     content: "";
-    @apply absolute inset-0 p-1 rounded-[20px] pointer-events-none;
+    @apply absolute inset-0 p-1 rounded-[20px] pointer-events-none transition-colors duration-300 ease-out;
     background: linear-gradient(
       108.19deg,
       #fff 4.12%,
@@ -135,7 +145,13 @@
     -webkit-mask-composite: xor;
     mask-composite: exclude;
   }
-
+  .hero-right > ul > li:hover {
+    @apply bg-primary-10 backdrop-blur-lg;
+  }
+  .hero-right > ul > li:hover::before {
+    background: linear-gradient(0deg, #00adef, #00adef),
+      linear-gradient(106.94deg, rgba(255, 255, 255, 0.4) 1.21%, #ffffff 98.32%);
+  }
   /* Core Services Styles */
   .core-services {
     @apply my-20 container mx-auto relative;
@@ -321,5 +337,36 @@
   }
   .testimonial-carousel-control-right {
     @apply -right-8;
+  }
+
+  /* Call To Action Styles */
+  .cta {
+    @apply my-20 container mx-auto bg-black py-16 px-8 rounded-sm relative;
+  }
+  .cta::after {
+    content: "";
+    @apply absolute top-0 right-0 h-full w-[492px] z-10 opacity-30 md:opacity-100;
+    background: url("/wealthix-advisors/cta-circle.svg") top/cover no-repeat;
+  }
+  .cta > h2 {
+    @apply text-white mb-6 max-w-3xl;
+  }
+  .cta > p {
+    @apply text-white mb-8 max-w-3xl;
+  }
+  .cta > p > span {
+    @apply text-primary;
+  }
+  .cta-actions {
+    @apply flex justify-start items-center gap-2 flex-wrap;
+  }
+  .cta-actions > button {
+    @apply flex items-center justify-between gap-3;
+  }
+  .cta-actions > svg {
+    @apply inline-block h-6 w-6;
+  }
+  .cta-actions > button > span {
+    @apply text-start;
   }
 }

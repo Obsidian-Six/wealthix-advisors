@@ -341,7 +341,7 @@
 
   /* Call To Action Styles */
   .cta {
-    @apply my-20 container mx-auto bg-black py-16 px-8 rounded-sm relative;
+    @apply my-20 container mx-auto bg-black py-16 px-4 md:px-8 rounded-sm relative;
   }
   .cta::after {
     content: "";
@@ -368,5 +368,35 @@
   }
   .cta-actions > button > span {
     @apply text-start;
+  }
+
+  /* Faq Styles */
+  .faqs {
+    @apply my-20 container mx-auto p-4 md:p-8;
+  }
+  .faqs > h2 {
+    @apply mb-16;
+  }
+  .faq-card {
+    @apply bg-black text-white w-full max-w-4xl mx-auto mb-4 rounded-xl p-6 cursor-pointer;
+  }
+  .faq-question {
+    @apply flex justify-between items-center text-base/[100%] font-semibold mb-0 transition-all duration-300 ease-out;
+  }
+  .faq-icon {
+    @apply inline-block h-6 w-6 transition-transform duration-300 ease-out;
+  }
+  .faq-answer {
+    @apply text-sm font-normal text-white max-h-0 overflow-hidden transition-all duration-300 ease-out;
+  }
+
+  .faq-card[data-opened="true"] .faq-question {
+    @apply mb-4 transition-[margin-bottom] duration-300 ease-out;
+  }
+  .faq-card[data-opened="true"] .faq-answer {
+    @apply max-h-96 mt-4 transition-all duration-300 ease-out;
+  }
+  .faq-card[data-opened="true"] .faq-icon {
+    @apply transform -rotate-180 transition-transform duration-300 ease-out;
   }
 }

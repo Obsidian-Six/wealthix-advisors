@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./_components/navbar/navbar";
 import NavBanner from "./_components/navbar/nav-banner";
+import Footer from "./_components/footer/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -38,7 +39,9 @@ export default function RootLayout({
           <Navbar />
         </header>
         <main>{children}</main>
-        <footer> </footer>
+        <footer>
+          <Footer />
+        </footer>
       </body>
     </html>
   );

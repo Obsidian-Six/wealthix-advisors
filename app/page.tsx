@@ -5,6 +5,7 @@ import CTA from "./_components/cta/cta";
 import FAQs from "./_components/faqs/faqs";
 import GetInTouch from "./_components/get-in-touch/get-in-touch";
 import Hero from "./_components/hero/hero";
+import Services from "./_components/services/services";
 import Testimonial from "./_components/testimonials/testimonial";
 import TrustedExperts from "./_components/trusted-experts/trusted-experts";
 
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <CoreServices />
       <TrustedExperts />
+      <Services />
       <Compliant />
       <Choosing />
       <Testimonial />

@@ -93,7 +93,7 @@
   }
   button,
   button[data-variant="solid"] {
-    @apply bg-[radial-gradient(50%_78.68%_at_50%_100%,_#5ED3FF_13.36%,_#00ADEF_78.53%)] hover:bg-[radial-gradient(97.72%_153.78%_at_50%_100%,_#5ED3FF_19.52%,_#00ADEF_82.44%)] hover:shadow-[0px_4px_4.7px_0px_#45434340] text-white font-inter font-semibold text-sm uppercase p-5 rounded-[75px] cursor-pointer transition-colors duration-300 ease-out;
+    @apply bg-[radial-gradient(50%_78.68%_at_50%_100%,_#5ED3FF_13.36%,_#00ADEF_78.53%)] hover:bg-[radial-gradient(97.72%_153.78%_at_50%_100%,_#5ED3FF_19.52%,_#00ADEF_82.44%)] hover:shadow-[0px_4px_4.7px_0px_#45434340] focus:outline-none focus:bg-[radial-gradient(97.72%_153.78%_at_50%_100%,_#5ED3FF_19.52%,_#00ADEF_82.44%)] focus:scale-105 text-white font-inter font-semibold text-sm uppercase p-5 rounded-[75px] cursor-pointer transition-colors duration-300 ease-out;
   }
   button[data-variant="outline"] {
     @apply bg-transparent bg-none border border-primary text-white;
@@ -105,6 +105,17 @@
 }
 
 @layer components {
+  /* Nav banner styles */
+  .nav-banner {
+    @apply bg-primary w-full;
+  }
+  .nav-banner-container {
+    @apply container mx-auto py-2 px-16 flex justify-end items-center gap-4;
+  }
+  .nav-banner-link {
+    @apply text-white text-sm font-clash hover:underline focus:outline-none focus:underline focus:scale-105  transition duration-100;
+  }
+
   /* Hero Section Styles */
   .hero {
     @apply container mx-auto h-[600px] flex items-center justify-between px-16 py-8 rounded-xl;
@@ -214,6 +225,97 @@
     @apply w-auto h-auto xl:w-[526px] xl:h-[424px];
   }
 
+  /* Services Section Styles */
+  .services {
+    @apply my-20 container mx-auto p-4 md:p-8 flex flex-col xl:flex-row justify-center xl:justify-between items-center xl:items-start gap-4;
+  }
+  .services-left-container {
+    @apply max-w-3xl;
+  }
+  .services-left-container > h2 {
+    @apply mb-6;
+  }
+  .services-left-container > p {
+    @apply mb-8;
+  }
+  .service-block {
+    @apply mb-16;
+  }
+  .service-block > h3 {
+    @apply text-black mb-8 text-xl font-normal font-clash;
+  }
+  .service-block > h3 > span {
+    @apply text-primary;
+  }
+  .service-block > h3 > svg {
+    @apply inline-block h-8 w-8 me-2;
+  }
+  .service-card {
+    @apply px-2 md:px-8 py-4 border-b border-gray-light relative cursor-pointer overflow-hidden flex justify-between items-center;
+  }
+  .service-card::before {
+    content: "";
+    @apply absolute left-1/2 -translate-x-1/2 bottom-0 h-full w-full bg-primary-10 translate-y-full transition-all duration-300 ease-out;
+  }
+  .service-card:hover::before {
+    @apply translate-y-0;
+  }
+  .service-card:hover > a {
+    @apply bg-primary rotate-45;
+  }
+  .service-card > .service-card-content > h4 {
+    @apply text-black text-base font-normal mb-4;
+  }
+  .service-card > .service-card-content > p {
+    @apply text-sm font-light text-sm/[150%] text-black;
+  }
+  .service-card > a {
+    @apply bg-black h-11 w-11 rounded-full flex justify-center items-center transition-all duration-300 ease-out;
+  }
+  .service-card > a > svg {
+    @apply inline-block h-6 w-6 text-white;
+  }
+  .service-card > .service-card-content {
+    @apply max-w-3xs md:max-w-sm;
+  }
+
+  .services-right-container {
+    @apply flex flex-col justify-start items-start bg-[#f9f9f9] rounded-3xl px-4 md:px-8 py-8 md:py-16 max-w-lg gap-4;
+  }
+  .services-right-container > h3 {
+    @apply text-primary mb-4 font-medium text-lg font-clash;
+  }
+  .services-right-container > form {
+    @apply w-full grid grid-cols-1 md:grid-cols-2 gap-4;
+  }
+  .services-right-container > form > label {
+    @apply block text-black text-sm font-medium mb-4 focus-within:font-semibold col-span-2;
+  }
+  .services-right-container > form > label:first-child,
+  .services-right-container > form > label:nth-child(2) {
+    @apply md:col-span-1!;
+  }
+  .services-right-container > form > label > input,
+  .services-right-container > form > label > select,
+  .services-right-container > form > label > textarea {
+    @apply w-full mt-2 p-3 rounded-lg bg-transparent text-black placeholder-gray-dark border border-gray-dark focus:outline-none focus:border-primary transition duration-200;
+  }
+  .services-right-container > form > label > select > option {
+    @apply text-black bg-white;
+  }
+  .services-right-container > form > button {
+    @apply col-span-2 flex items-center justify-between gap-3 max-w-3xs;
+  }
+
+  .services-right-testimonial-container {
+    @apply mt-16 w-full flex flex-col justify-start items-start bg-white p-2 md:p-8 rounded-2xl;
+  }
+  .services-right-testimonial-container > p {
+    @apply text-black text-sm font-medium mb-4;
+  }
+  .services-right-testimonial-container > .testimonial-card {
+    @apply w-full;
+  }
   /* Compliant Section Styles */
   .compliant {
     @apply my-20 container mx-auto;
@@ -324,7 +426,7 @@
     @apply text-sm/[150%] font-normal text-black;
   }
   .testimonial-footer {
-    @apply w-full flex justify-between items-center;
+    @apply w-full flex justify-between items-center bg-transparent;
   }
   .testimonial-platform > img {
     @apply w-5 h-5 object-contain object-center inline-block ms-1;
@@ -433,7 +535,7 @@
   }
   .git-textarea,
   .git-checkbox {
-    @apply col-span-2;
+    @apply col-span-2!;
   }
   .git-checkbox {
     @apply flex! justify-start! items-start! gap-4!;
@@ -461,7 +563,7 @@
 
   /* Footer Middle Styles */
   .footer-middle {
-    @apply container flex justify-between items-start flex-wrap gap-2 p-8 mb-8;
+    @apply container flex justify-between items-start flex-wrap p-8 mb-8 gap-8 xl:gap-0;
   }
 
   /* Footer Middle Left Styles */

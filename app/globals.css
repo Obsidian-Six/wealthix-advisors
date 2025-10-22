@@ -118,7 +118,7 @@
 
   /* Hero Section Styles */
   .hero {
-    @apply container mx-auto h-[600px] flex items-center justify-between px-16 py-8 rounded-xl;
+    @apply container mx-auto h-auto lg:h-[600px] flex flex-col md:flex-row items-center justify-between px-2 md:px-16 py-8 xl:rounded-xl gap-4;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       linear-gradient(90deg, rgba(0, 0, 0, 0) -7.6%, rgba(0, 0, 0, 0.6) 71.74%),
       url("/wealthix-advisors/hero-bg.jpg") center/cover no-repeat;
@@ -169,7 +169,7 @@
   }
   /* Core Services Styles */
   .core-services {
-    @apply my-20 container mx-auto relative;
+    @apply my-20 container mx-auto p-4 relative;
   }
   .core-services > h2 {
     @apply max-w-2xl mx-auto text-center mb-16;
@@ -213,7 +213,7 @@
 
   /* Trusted Experts Styles */
   .trusted-experts {
-    @apply my-20 container mx-auto max-h-full xl:max-h-[550px] flex flex-col flex-wrap gap-8 items-center xl:items-start bg-secondary py-12 px-16 rounded-lg;
+    @apply my-20 container mx-auto max-h-full xl:max-h-[550px] flex flex-col flex-wrap gap-8 items-center xl:items-start bg-secondary py-12 px-4 md:px-16 rounded-lg;
   }
   .trusted-experts > h2 {
     @apply max-w-full xl:max-w-xl;
@@ -356,7 +356,7 @@
 
   /* Choosing Section Styles */
   .choosing {
-    @apply my-20 container mx-auto relative p-8 py-32 flex justify-center lg:justify-between items-start flex-wrap;
+    @apply my-20 container mx-auto relative p-4 md:p-8 py-32 flex justify-center lg:justify-between items-start flex-wrap;
   }
   .choosing::before {
     content: "";
@@ -411,7 +411,7 @@
     box-shadow: 4px 4px 4px 0px #d9d9d940;
   }
   .testimonial-header {
-    @apply static flex justify-start items-center gap-2 bg-white p-2 rounded-xl shadow-none;
+    @apply static flex justify-start items-center gap-2 bg-white p-2 rounded-xl shadow-none z-40;
   }
   .testimonial-avatar {
     @apply w-10 h-10 rounded-full object-cover object-center me-2;
@@ -508,7 +508,7 @@
 
   /* Get In Touch Styles */
   .git {
-    @apply my-20 container mx-auto p-8 md:p-16 bg-black rounded-3xl flex justify-center xl:justify-between;
+    @apply my-20 container mx-auto p-8 md:p-16 bg-black xl:rounded-3xl flex justify-center xl:justify-between;
   }
   .git-left {
     @apply max-w-2xl;
@@ -535,7 +535,7 @@
   }
   .git-textarea,
   .git-checkbox {
-    @apply col-span-2!;
+    @apply md:col-span-2!;
   }
   .git-checkbox {
     @apply flex! justify-start! items-start! gap-4!;
@@ -615,7 +615,7 @@
 
   /* Footer Bottom Styles */
   .footer-bottom {
-    @apply container mx-auto flex justify-center items-center flex-wrap gap-2 py-4 px-16;
+    @apply container mx-auto flex justify-center items-center flex-wrap gap-2 py-4 px-4 md:px-16;
   }
   .footer-bottom > h2 {
     @apply invisible absolute top-0 -left-[9999px];

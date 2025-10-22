@@ -44,7 +44,7 @@
     @apply fixed top-0 left-0 w-full z-50 bg-white shadow-[4px_4px_4px_0px_#D9D9D940];
   }
   nav {
-    @apply container mx-auto flex justify-between items-center py-2.5 px-16;
+    @apply container mx-auto flex justify-between items-center py-2.5 px-4 md:px-16;
   }
   nav > a {
     @apply border-b-0 focus:outline-none focus:border-b-2 focus:border-primary transition duration-100;
@@ -52,14 +52,34 @@
   nav > a > img {
     @apply w-[221px] h-12;
   }
+  /* Primary menu: hidden on mobile by default, flex from md+ */
   nav > ul {
-    @apply flex justify-end items-center gap-4;
+    @apply hidden md:flex justify-end items-center gap-4;
+  }
+  /* Mobile toggle button */
+  .nav-toggle {
+    @apply inline-flex items-center justify-center md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+  /* When opened, show menu as a vertical panel on small screens with slide-in */
+  nav[data-opened="true"] > ul {
+    @apply flex flex-col absolute left-0 top-full w-full bg-white shadow-md p-4 gap-2 md:static md:w-auto md:bg-transparent md:shadow-none md:flex-row md:p-0 z-50;
+    animation: nav-slide-in 200ms ease-out both;
+  }
+  @keyframes nav-slide-in {
+    from {
+      transform: translateY(-12px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
   nav > ul > li > a {
     @apply list-none font-semibold text-sm text-black hover:text-primary hover:underline hover:underline-offset-[16%] hover:decoration-[10.5%] focus:outline-none focus:text-primary focus:underline focus:underline-offset-[16%] focus:decoration-[10.5%] transition duration-100;
   }
   main {
-    @apply mt-28 overflow-hidden;
+    @apply mt-16 sm:mt-28 overflow-hidden;
   }
   section {
     @apply container mx-auto;
@@ -105,15 +125,32 @@
 }
 
 @layer components {
+  /* Mobile nav overlay */
+  .nav-overlay {
+    @apply hidden md:hidden; /* hidden by default, and not used on md+ */
+  }
+  nav[data-opened="true"] .nav-overlay {
+    @apply block fixed left-0 right-0 top-0 bottom-0 bg-black/40; /* backdrop below header/banner */
+    z-index: 40; /* under menu panel (z-50) but above page */
+    animation: overlay-fade 200ms ease-out both;
+  }
+  @keyframes overlay-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   /* Nav banner styles */
   .nav-banner {
-    @apply bg-primary w-full;
+    @apply bg-primary w-full hidden sm:block;
   }
   .nav-banner-container {
-    @apply container mx-auto py-2 px-16 flex justify-end items-center gap-4;
+    @apply container mx-auto py-2 px-4 md:px-16 flex justify-end items-center gap-4;
   }
   .nav-banner-link {
-    @apply text-white text-sm font-clash hover:underline focus:outline-none focus:underline focus:scale-105  transition duration-100;
+    @apply text-white text-sm font-clash hover:underline focus:outline-none focus:underline focus:scale-105  transition duration-100 ease-out;
   }
 
   /* Hero Section Styles */

@@ -25,12 +25,9 @@ export default async function Choosing() {
                   fill="#14AE5C"
                 />
               </svg>
-              Trusted by Businesses
+              Fast Response
             </h3>
-            <p>
-              Supporting UAE startups and SMEs with reliable tax and compliance
-              solutions.
-            </p>
+            <p>Guaranteed reply within 30 minutes</p>
           </article>
         </li>
         <li>
@@ -50,12 +47,9 @@ export default async function Choosing() {
                   fill="#14AE5C"
                 />
               </svg>
-              Complete Services
+              AI-Driven Accuracy
             </h3>
-            <p>
-              From corporate tax registration to VAT, bookkeeping, and payroll –
-              all under one roof.
-            </p>
+            <p>Minimize errors with intelligent automation</p>
           </article>
         </li>
         <li>
@@ -75,12 +69,9 @@ export default async function Choosing() {
                   fill="#14AE5C"
                 />
               </svg>
-              Expert Professionals
+              UAE Compliance Experts
             </h3>
-            <p>
-              Certified by the Federal Tax Authority (FTA) and trained in UAE
-              corporate tax regulations
-            </p>
+            <p>Hassle-free corporate tax and VAT filings</p>
           </article>
         </li>
         <li>
@@ -100,12 +91,9 @@ export default async function Choosing() {
                   fill="#14AE5C"
                 />
               </svg>
-              Flexible Solutions
+              Tailored Advice
             </h3>
-            <p>
-              Custom packages designed for small and growing businesses to scale
-              with confidence
-            </p>
+            <p>Personalized recommendations for your business growth.</p>
           </article>
         </li>
         <li>

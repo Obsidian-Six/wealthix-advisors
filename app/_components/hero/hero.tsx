@@ -3,10 +3,16 @@ export default async function Hero() {
     <section className="hero">
       <div className="hero-left">
         <h1>
-          Expert Tax and Compliance Advisory in Dubai<span>.</span>
+          <span>AI-Powered</span> <br /> Accounting for Smarter Business
+          Decisions
         </h1>
+        <p>
+          Streamline bookkeeping, VAT, and corporate tax with intelligent
+          automation. Real-time insights, accurate reporting, and actionable
+          recommendations — all in one platform.
+        </p>
         <button type="button">
-          Schedule Consultation Today
+          Book Your Free Consultation
           {/* Arrow Right */}
           <svg
             width="14"
@@ -36,15 +42,23 @@ export default async function Hero() {
       </div>
       <div className="hero-right">
         <p>
-          At <span>Wealthix Advisors</span>, we help businesses stay compliant
-          and financially
-          <span>secure</span> with
+          At <span>Wealthix Advisors</span>, we specialize in helping businesses
+          thrive with
         </p>
         <ul>
-          <li>Corporate and VAT tax advisory tailored to UAE laws</li>
-          <li>Complete compliance management for hassle-free operations</li>
-          <li>Independent audits to build trust and transparency</li>
-          <li>Accurate accounting and financial reporting</li>
+          <li>
+            Customized Corporate & VAT tax strategies aligned with UAE
+            regulations
+          </li>
+          <li>
+            Seamless compliance management to ensure smooth business operations
+          </li>
+          {/* Removed this line as per new design */}
+          {/* <li>Independent audits to build trust and transparency</li> */}
+          <li>
+            Accurate financial reporting and accounting for sound
+            decision-making
+          </li>
         </ul>
       </div>
     </section>

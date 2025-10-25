@@ -5,8 +5,8 @@ export default function CTA() {
         Ready for <span>Stress-Free</span> Corporate Tax Compliance?
       </h2>
       <p>
-        Your dedicated FTA-certified tax consultant is just a click away. With
-        <span> Wealthix Advisors</span>, corporate tax in the UAE is simple and
+        Your dedicated expert tax consultant is just a click away. With{" "}
+        <span>Wealthix Advisors</span>, corporate tax in the UAE is simple and
         hassle-free. We help you stay fully compliant, avoid penalties, and
         optimize tax benefits.
       </p>

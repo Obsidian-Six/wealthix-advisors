@@ -20,7 +20,7 @@ function fetchFAQs(): FAQ[] {
     {
       question: "How quickly can you handle corporate tax filings?",
       answer:
-        "We prioritize timely submissions and can typically handle corporate tax filings within 2-4 weeks, depending on the complexity of the case.",
+        "We prioritize timely submissions and can typically handle corporate tax filings within 5-7 working days, depending on the complexity of the case.",
     },
     {
       question: "Can you assist with VAT registration and refunds?",

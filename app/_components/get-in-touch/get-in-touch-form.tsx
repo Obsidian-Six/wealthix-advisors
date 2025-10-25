@@ -179,8 +179,12 @@ export default function GetInTouchForm() {
           checked={values.agree}
           onChange={onInputChange}
         />
-        I By submitting this form, you agree to be contacted by our team via
-        phone, email, or other channels.
+        By booking a consultation, you agree to provide accurate and complete
+        financial information.
+        <br />
+        <br />
+        Wealthix Advisors reserves the right to reschedule consultations in
+        exceptional circumstances.
       </label>
 
       <button

@@ -13,7 +13,7 @@ export default async function Hero() {
           automation. Real-time insights, accurate reporting, and actionable
           recommendations — all in one platform.
         </p>
-        <button type="button">
+        <button type="button" className="cta-action">
           Book Your Free Consultation
           {/* Arrow Right */}
           <svg

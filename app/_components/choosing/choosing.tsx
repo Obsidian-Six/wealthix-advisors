@@ -122,7 +122,7 @@ export default async function Choosing() {
           </article>
         </li> */}
         <li>
-          <button type="button">
+          <button type="button" className="cta-action">
             Schedule Consultation Today
             {/* Arrow Right */}
             <svg

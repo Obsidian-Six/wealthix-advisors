@@ -10,11 +10,9 @@ export default function TestimonialCarousel() {
     const firstCard = carousel.querySelector("li");
     if (!firstCard) return;
 
-    const style = getComputedStyle(firstCard);
     const scrollAmount = firstCard.clientWidth;
 
     const scroll = (dir: "left" | "right") => {
-      const width = carousel.clientWidth;
       carousel.scrollBy({
         left: dir === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",

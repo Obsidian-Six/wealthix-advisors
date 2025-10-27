@@ -33,6 +33,7 @@ export default function TestimonialCard({
             width={20}
             height={20}
             alt={`${testimonial.platform} logo`}
+            unoptimized
           />
         </span>
         <span className="testimonial-duration">{testimonial.duration}</span>

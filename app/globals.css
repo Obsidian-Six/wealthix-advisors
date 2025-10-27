@@ -284,7 +284,7 @@
   .e-invoicing::after {
     content: "";
     @apply absolute top-1/2 right-0 z-40 h-4/5 w-[980px] rounded-full translate-x-1/2 -translate-y-1/2;
-    background: url("/wealthix-advisors/e-invoicing.jpg") center/cover no-repeat;
+    background: url("/e-invoicing.jpg") center/cover no-repeat;
   }
   .e-invoicing > h2 {
     @apply max-w-2xl mb-8 text-white;
@@ -469,7 +469,7 @@
   .choosing::after {
     content: "";
     @apply absolute top-0 left-0 w-3/4 h-full -z-40 opacity-10;
-    background: url("/wealthix-advisors/choose-bg.svg") top/contain no-repeat;
+    background: url("/choose-bg.svg") top/contain no-repeat;
   }
   .choosing > h2 {
     @apply text-white w-full mb-16;
@@ -559,7 +559,7 @@
   .cta::after {
     content: "";
     @apply absolute top-0 right-0 h-full w-[492px] z-10 opacity-30 md:opacity-100;
-    background: url("/wealthix-advisors/cta-circle.svg") top/cover no-repeat;
+    background: url("/cta-circle.svg") top/cover no-repeat;
   }
   .cta > h2 {
     @apply text-white mb-6 max-w-3xl;
@@ -688,8 +688,8 @@
   .footer-address > h3 {
     @apply text-[20px] font-semibold  font-clash text-primary mb-2;
   }
-  .footer-address > address {
-    @apply not-italic text-sm/[100%] font-normal text-white;
+  .footer-address > address > p {
+    @apply not-italic text-sm/[100%] font-normal text-white mb-2;
   }
 
   /* Footer Contact Styles */
@@ -697,7 +697,7 @@
     @apply w-full flex justify-start items-start flex-wrap gap-4;
   }
   .footer-contact > h3 {
-    @apply w-full text-[20px] font-semibold font-clash text-primary mb-2;
+    @apply w-full text-[0px] font-semibold font-clash text-primary mb-2;
   }
   .footer-contact-block > h4 {
     @apply text-sm font-semibold font-clash text-white mb-2;

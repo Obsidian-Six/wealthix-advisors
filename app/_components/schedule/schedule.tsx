@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import ScheduleImage from "@/public/schedule.png";
 export default function Schedule() {
   return (
     <section className="schedule">
@@ -52,7 +52,7 @@ export default function Schedule() {
           Session Duration:
           <span>30 minutes per inquiry</span>
         </p>
-        <button type="button">
+        <button type="button" className="cta-action">
           Book Your Free Consultation Now
           {/* Arrow Right */}
           <svg
@@ -88,7 +88,7 @@ export default function Schedule() {
       </div>
       <figure className="schedule-right">
         <Image
-          src="/wealthix-advisors/schedule.png"
+          src={ScheduleImage}
           alt="Schedule Consultation"
           layout="responsive"
           width={500}

@@ -105,8 +105,8 @@ export default async function Footer() {
           <div className="footer-address">
             <h3>Address</h3>
             <address>
-              Level 12, Rolex Tower, Sheikh Zayed Road, Near Financial Centre
-              Metro Station, Dubai, UAE.
+              Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai,
+              United Arab Emirates
             </address>
           </div>
           <div className="footer-contact">

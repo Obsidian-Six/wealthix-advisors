@@ -1,3 +1,5 @@
+import Profile from "@/public/profile.png";
+import Image from "next/image";
 export default async function Hero() {
   return (
     <section className="hero">
@@ -41,11 +43,7 @@ export default async function Hero() {
         </button>
       </div>
       <div className="hero-right">
-        <p>
-          At <span>Wealthix Advisors</span>, we specialize in helping businesses
-          thrive with
-        </p>
-        <ul>
+        {/* <ul>
           <li>
             Customized Corporate & VAT tax strategies aligned with UAE
             regulations
@@ -53,13 +51,18 @@ export default async function Hero() {
           <li>
             Seamless compliance management to ensure smooth business operations
           </li>
-          {/* Removed this line as per new design */}
-          {/* <li>Independent audits to build trust and transparency</li> */}
           <li>
             Accurate financial reporting and accounting for sound
             decision-making
           </li>
-        </ul>
+        </ul> */}
+        <figure>
+          <Image src={Profile} alt="CA Neetu" width={400} height={400} />
+          <figcaption>
+            <strong>CA Neetu</strong>
+            <br />- Founder
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

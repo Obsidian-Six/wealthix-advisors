@@ -157,16 +157,16 @@
 
   /* Hero Section Styles */
   .hero {
-    @apply container mx-auto h-auto lg:h-[600px] flex flex-col md:flex-row items-center justify-between px-2 md:px-16 py-8 xl:rounded-xl gap-4;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    @apply container mx-auto h-auto lg:h-[600px] flex flex-col md:flex-row items-center justify-between px-2 md:px-16 py-8 xl:rounded-xl gap-4 relative;
+    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       linear-gradient(90deg, rgba(0, 0, 0, 0) -7.6%, rgba(0, 0, 0, 0.6) 71.74%),
-      url("/wealthix-advisors/hero-bg.jpg") center/cover no-repeat;
+      url("/wealthix-advisors/hero-bg.jpg") center/cover no-repeat; */
   }
   .hero-left > h1 {
-    @apply max-w-[663px] mb-5;
+    @apply max-w-[663px] mb-5 text-black;
   }
   .hero-left > p {
-    @apply text-white text-sm font-semibold uppercase max-w-xl mb-4;
+    @apply text-gray-dark text-sm font-semibold uppercase max-w-xl mb-4;
   }
   .hero-left > button {
     @apply flex items-center justify-between gap-3;
@@ -174,11 +174,21 @@
   .hero-right {
     @apply max-w-[488px] flex flex-col gap-6;
   }
-  .hero-right > p {
-    @apply text-white text-sm font-semibold uppercase mb-6;
+
+  .hero-right > figure {
+    @apply overflow-visible;
   }
-  .hero-right > p > span {
-    @apply text-primary;
+  .hero-right > figure > img {
+    @apply rounded-full;
+  }
+  .hero-right > figure > figcaption {
+    @apply absolute bottom-0 right-0 z-40  -translate-y-1/2 translate-x-1/2 py-4 px-8 bg-primary text-white rounded-2xl;
+    top: unset;
+    left: unset;
+    transform: unset;
+  }
+  .hero-right > figure > figcaption > strong {
+    @apply text-base;
   }
   .hero-right > ul {
     @apply list-none text-white-85 text-sm font-medium flex justify-start flex-wrap gap-2;

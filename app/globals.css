@@ -157,10 +157,7 @@
 
   /* Hero Section Styles */
   .hero {
-    @apply container mx-auto h-auto lg:h-[600px] flex flex-col md:flex-row items-center justify-between px-2 md:px-16 py-8 xl:rounded-xl gap-4 relative;
-    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-      linear-gradient(90deg, rgba(0, 0, 0, 0) -7.6%, rgba(0, 0, 0, 0.6) 71.74%),
-      url("/wealthix-advisors/hero-bg.jpg") center/cover no-repeat; */
+    @apply container mx-auto h-auto xl:h-[600px] flex flex-col xl:flex-row items-center justify-between px-2 xl:px-16 py-8 xl:rounded-xl gap-32 xl:gap-4 relative;
   }
   .hero-left > h1 {
     @apply max-w-[663px] mb-5 text-black;
@@ -174,50 +171,53 @@
   .hero-right {
     @apply max-w-[488px] flex flex-col gap-6;
   }
-
-  .hero-right > figure {
-    @apply overflow-visible;
+  .hero-right-container {
+    @apply relative flex justify-center items-center mb-4;
   }
-  .hero-right > figure > img {
-    @apply rounded-full;
-  }
-  .hero-right > figure > figcaption {
-    @apply absolute bottom-0 right-0 z-40  -translate-y-1/2 translate-x-1/2 py-4 px-8 bg-primary text-white rounded-2xl;
-    top: unset;
-    left: unset;
-    transform: unset;
-  }
-  .hero-right > figure > figcaption > strong {
-    @apply text-base;
-  }
-  .hero-right > ul {
-    @apply list-none text-white-85 text-sm font-medium flex justify-start flex-wrap gap-2;
+  .hero-right-container > figure {
+    @apply rounded-full bg-primary-10 h-[200px] w-[200px] sm:h-[300px] sm:w-[300px] md:h-[400px] md:w-[400px];
   }
 
-  /* Separated Styles for hover over 'li' for clarity */
-  .hero-right > ul > li {
-    @apply relative h-32 w-56 p-5 rounded-[20px] overflow-hidden 
-         bg-white-10 backdrop-blur-sm transition-colors duration-300 ease-out;
+  .hero-right-container > .hero-right-title {
+    @apply absolute -bottom-8 sm:bottom-0 right-0 px-8 py-2 bg-primary text-white rounded-full shadow-lg z-40 text-xs md:text-sm;
   }
-
-  .hero-right > ul > li::before {
-    content: "";
-    @apply absolute inset-0 p-1 rounded-[20px] pointer-events-none transition-colors duration-300 ease-out;
-    background: linear-gradient(
-      108.19deg,
-      #fff 4.12%,
-      rgba(255, 255, 255, 0.4) 99.97%
-    );
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
+  .hero-right-container > .hero-right-title > span {
+    @apply text-sm md:text-base font-medium;
   }
-  .hero-right > ul > li:hover {
-    @apply bg-primary-10 backdrop-blur-lg;
+  /* Hero highlights rotator (single-box) */
+  .hero-right-highlights {
+    @apply list-none text-white-85 text-xs md:text-sm font-medium absolute -top-16 -left-1/2 sm:top-0 sm:-left-1/4 md:-left-1/3 overflow-hidden rounded-[20px] p-1 z-40 w-40 h-28 md:w-56 md:h-32;
   }
-  .hero-right > ul > li:hover::before {
-    background: linear-gradient(0deg, #00adef, #00adef),
-      linear-gradient(106.94deg, rgba(255, 255, 255, 0.4) 1.21%, #ffffff 98.32%);
+  .hero-highlight {
+    @apply h-full w-full p-4 md:p-5 rounded-[20px] overflow-hidden bg-primary shadow-lg transition-colors duration-300 ease-out;
+    position: absolute;
+    inset: 0;
+  }
+  .hero-slide-in {
+    animation: hero-slide-in 700ms ease-in-out both;
+  }
+  .hero-slide-out {
+    animation: hero-slide-out 700ms ease-in-out both;
+  }
+  @keyframes hero-slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes hero-slide-out {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(-14px);
+    }
   }
   /* Core Services Styles */
   .core-services {

@@ -1,5 +1,7 @@
 import Profile from "@/public/profile.png";
 import Image from "next/image";
+import HeroHighlights from "./hero-highlights";
+
 export default async function Hero() {
   return (
     <section className="hero">
@@ -43,26 +45,30 @@ export default async function Hero() {
         </button>
       </div>
       <div className="hero-right">
-        {/* <ul>
-          <li>
-            Customized Corporate & VAT tax strategies aligned with UAE
-            regulations
-          </li>
-          <li>
-            Seamless compliance management to ensure smooth business operations
-          </li>
-          <li>
-            Accurate financial reporting and accounting for sound
-            decision-making
-          </li>
-        </ul> */}
-        <figure>
-          <Image src={Profile} alt="CA Neetu" width={400} height={400} />
-          <figcaption>
-            <strong>CA Neetu</strong>
-            <br />- Founder
-          </figcaption>
-        </figure>
+        <div className="hero-right-container">
+          <HeroHighlights
+            items={[
+              "Customized Corporate & VAT tax strategies aligned with UAE regulations",
+              "Seamless compliance management to ensure smooth business operations",
+              "Accurate financial reporting and accounting for sound decision-making",
+            ]}
+            intervalMs={4000}
+            animationMs={700}
+          />
+
+          <figure>
+            <Image src={Profile} alt="CA Neetu" width={400} height={400} />
+            <figcaption>
+              <strong>CA Neetu</strong>
+              <br />- Founder
+            </figcaption>
+          </figure>
+
+          <p className="hero-right-title">
+            <span>CA Neetu</span>
+            <br /> Founder
+          </p>
+        </div>
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "./_components/navbar/navbar";
 import NavBanner from "./_components/navbar/nav-banner";
 import Footer from "./_components/footer/footer";
-import CtaAction from "./_components/cta-action";
+import CtaAction from "./_components/cta-action/cta-action";
 
 export const metadata: Metadata = {
   title: "Wealthix Advisors",

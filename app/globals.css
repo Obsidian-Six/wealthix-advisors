@@ -283,7 +283,7 @@
   }
   .e-invoicing::after {
     content: "";
-    @apply absolute top-1/2 right-0 z-40 h-4/5 w-[980px] rounded-full translate-x-1/2 -translate-y-1/2;
+    @apply absolute top-1/2 right-0 z-40 h-4/5 w-[980px] rounded-full translate-x-1/2 -translate-y-1/2 hidden xl:block;
     background: url("/e-invoicing.jpg") center/cover no-repeat;
   }
   .e-invoicing > h2 {
@@ -491,7 +491,7 @@
   }
 
   .choosing-figure {
-    @apply w-[700px] h-[550px];
+    @apply w-[280px] h-[220px] md:w-[700px] md:h-[550px];
   }
 
   /* Testimonial Styles */

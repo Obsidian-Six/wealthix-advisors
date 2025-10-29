@@ -935,13 +935,13 @@
       linear-gradient(0deg, #080808, #080808);
   }
   .services-hero-left {
-    @apply max-w-2xl;
+    @apply md:max-w-2xl text-center md:text-start;
   }
   .services-hero-left > p {
     @apply text-white text-sm mt-8 mb-16 max-w-lg;
   }
   .services-hero > .services-hero-left > .btn {
-    @apply flex items-center justify-between gap-3;
+    @apply flex items-center justify-between gap-3 mx-auto md:mx-0;
   }
   .services-hero > .services-hero-left > .btn > img {
     @apply inline-block h-6 w-6;
@@ -950,6 +950,58 @@
     @apply text-start;
   }
   .services-hero-right {
-    @apply lg:w-[530px] lg:h-[470px];
+    @apply w-[338px] h-[300px] lg:w-[530px] lg:h-[470px];
+  }
+
+  /* Service Page Message Section */
+  .services-message {
+    @apply mt-20 container mx-auto px-8 md:px-16 py-8 text-center bg-[#E4F0FF] rounded-3xl z-40;
+  }
+  .services-message > p {
+    @apply text-[20px] md:text-lg/[150%] font-normal text-black mx-auto;
+  }
+
+  /* Service Page Trusted Section */
+  .services-trusted {
+    @apply my-20 container mx-auto p-4 md:p-16  rounded-none lg:rounded-3xl relative;
+  }
+  .services-trusted::before {
+    content: "";
+    @apply absolute -top-[200px] left-1/2 -translate-x-1/2 w-screen -z-40 bg-[#071B22] rounded-3xl;
+    height: calc(100% + 200px);
+  }
+  .services-trusted-block {
+    @apply w-full flex flex-col lg:flex-row justify-center items-center lg:items-start gap-8 xl:gap-32 mb-16;
+  }
+  .services-trusted-block-left {
+    @apply md:max-w-lg;
+  }
+  .services-trusted-block-left > h2 {
+    @apply text-white mb-4;
+  }
+  .services-trusted-block-left > p {
+    @apply text-white text-sm md:text-base font-normal;
+  }
+  .services-trusted-block-right {
+    @apply w-[300px] h-[240px] lg:w-[500px] lg:h-[400px];
+  }
+
+  .services-trusted-container {
+    @apply bg-black p-4 md:p-16 rounded-3xl;
+  }
+  .services-trusted-container > .services-trusted-container-header {
+    @apply text-white text-sm/[150%] md:text-base/[150%] font-normal mb-8;
+  }
+  .services-trusted-container > .services-trusted-container-list {
+    @apply list-none mb-8;
+  }
+  .services-trusted-container > .services-trusted-container-list > li {
+    @apply flex justify-start items-center gap-4 mb-4 text-white text-sm/[150%] md:text-base/[150%];
+  }
+  .services-trusted-container > .services-trusted-container-list > li > svg {
+    @apply inline-block h-6 w-6;
+  }
+  .services-trusted-container > .services-trusted-container-footer {
+    @apply text-white text-sm/[150%] md:text-base/[150%] font-normal mb-8;
   }
 }

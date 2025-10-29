@@ -30,6 +30,8 @@
   --text-2xl--letter-spacing: 0;
   --text-xl: 40px;
   --text-lg: 32px;
+  --text-lg--line-height: 100%;
+  --text-lg--letter-spacing: 0;
   --text-base: 24px;
   --text-base--line-height: 150%;
   --text-base--letter-spacing: 0;
@@ -87,19 +89,19 @@
     @apply container mx-auto;
   }
   h1 {
-    @apply text-3xl font-bold font-inter text-white;
+    @apply text-lg md:text-3xl font-bold font-inter text-white;
   }
   h1 > span {
     @apply text-primary;
   }
   h2 {
-    @apply text-2xl font-bold font-inter text-black;
+    @apply text-base md:text-2xl font-bold font-inter text-black;
   }
   h2 > span {
     @apply text-primary;
   }
   h3 {
-    @apply text-lg font-medium font-inter text-white;
+    @apply text-[20px] md:text-lg font-medium font-inter text-white;
   }
   p {
     @apply text-sm/[150%] font-normal text-black;
@@ -127,6 +129,15 @@
 }
 
 @layer components {
+  /* Global Components */
+  .btn,
+  .btn[data-variant="solid"] {
+    @apply bg-[radial-gradient(50%_78.68%_at_50%_100%,_#5ED3FF_13.36%,_#00ADEF_78.53%)] hover:bg-[radial-gradient(97.72%_153.78%_at_50%_100%,_#5ED3FF_19.52%,_#00ADEF_82.44%)] hover:shadow-[0px_4px_4.7px_0px_#45434340] focus:outline-none focus:bg-[radial-gradient(97.72%_153.78%_at_50%_100%,_#5ED3FF_19.52%,_#00ADEF_82.44%)] focus:scale-105 text-white font-inter font-semibold text-sm uppercase p-5 rounded-[75px] cursor-pointer transition-colors duration-300 ease-out max-w-fit;
+  }
+  .btn[data-variant="outline"] {
+    @apply bg-transparent bg-none border border-primary text-white;
+  }
+
   /* Mobile nav overlay */
   .nav-overlay {
     @apply hidden md:hidden; /* hidden by default, and not used on md+ */
@@ -157,16 +168,19 @@
 
   /* Hero Section Styles */
   .hero {
-    @apply container mx-auto h-auto xl:h-[600px] flex flex-col xl:flex-row items-center justify-between px-2 xl:px-16 py-8 xl:rounded-xl gap-32 xl:gap-4 relative;
+    @apply container mx-auto h-auto xl:h-[600px] flex flex-col xl:flex-row items-center justify-between px-4 xl:px-16 py-8 xl:rounded-xl gap-32 xl:gap-4 relative;
   }
   .hero-left > h1 {
     @apply max-w-[663px] mb-5 text-black;
   }
   .hero-left > p {
-    @apply text-gray-dark text-sm font-semibold uppercase max-w-xl mb-4;
+    @apply text-gray-dark text-xs md:text-sm font-semibold uppercase max-w-xl mb-4;
   }
-  .hero-left > button {
+  .hero-left > .btn {
     @apply flex items-center justify-between gap-3;
+  }
+  .hero-left > .btn > img {
+    @apply inline-block h-5 w-3.5;
   }
   .hero-right {
     @apply max-w-[488px] flex flex-col gap-6;
@@ -186,7 +200,7 @@
   }
   /* Hero highlights rotator (single-box) */
   .hero-right-highlights {
-    @apply list-none text-white-85 text-xs md:text-sm font-medium absolute -top-16 -left-1/2 sm:top-0 sm:-left-1/4 md:-left-1/3 overflow-hidden rounded-[20px] p-1 z-40 w-40 h-28 md:w-56 md:h-32;
+    @apply list-none text-white-85 text-xs md:text-sm font-medium absolute -top-16 -left-1/2 sm:-top-8   sm:-left-1/4 md:-left-1/3 overflow-hidden rounded-[20px] p-1 z-40 w-40 h-28 md:w-56 md:h-32;
   }
   .hero-highlight {
     @apply h-full w-full p-4 md:p-5 rounded-[20px] overflow-hidden bg-primary shadow-lg transition-colors duration-300 ease-out;
@@ -230,17 +244,17 @@
     @apply grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto justify-items-center;
   }
   .core-services-card {
-    @apply bg-black text-white max-w-lg p-8 rounded-3xl border border-primary backdrop-blur-sm;
+    @apply bg-black text-white max-w-lg p-4 md:p-8 rounded-3xl border border-primary backdrop-blur-sm;
   }
   .core-services-card:nth-child(2),
   .core-services-card:nth-child(3) {
     @apply bg-primary;
   }
-  .core-services-card h3 {
-    @apply mb-4;
+  .core-services-card > .services-card-header {
+    @apply flex justify-start items-center gap-2 mb-4;
   }
-  .core-services-card > h3 > svg {
-    @apply h-8 w-8 inline-block mr-2;
+  .core-services-card > .services-card-header > img {
+    @apply inline-block h-8 w-8 me-2;
   }
   .core-services-card p {
     @apply text-white text-sm/[150%] font-normal ms-8;
@@ -279,7 +293,7 @@
 
   /* E Invoicing Section Styles */
   .e-invoicing {
-    @apply my-20 container bg-black mx-auto p-4 md:p-8 md:px-16 relative overflow-hidden rounded-lg;
+    @apply my-20 container bg-black mx-auto p-4 md:p-8 md:px-16 relative overflow-hidden rounded-none lg:rounded-lg;
   }
   .e-invoicing::after {
     content: "";
@@ -290,13 +304,13 @@
     @apply max-w-2xl mb-8 text-white;
   }
   .e-invoicing > p {
-    @apply text-white text-lg mb-16 max-w-2xl;
+    @apply text-white text-[20px] md:text-lg mb-16 max-w-2xl;
   }
   .e-invoicing-list {
     @apply list-none max-w-xl mb-8;
   }
   .e-invoicing-list > li {
-    @apply p-2 border-t border-gray-light-50 last:border-b text-white text-base;
+    @apply p-2 border-t border-gray-light-50 last:border-b text-white text-sm md:text-base;
   }
   .e-invoicing > button {
     @apply flex items-center justify-between gap-3;
@@ -310,19 +324,25 @@
     @apply max-w-md mb-8;
   }
   .schedule-left > p {
-    @apply text-base mb-4 max-w-md;
+    @apply text-[20px] md:text-base mb-4 max-w-md;
   }
   .schedule-left > .timing {
-    @apply text-sm font-medium flex items-center uppercase last:mb-8;
+    @apply text-sm font-medium flex items-center justify-start uppercase last:mb-8;
   }
   .schedule-left > .timing > svg {
     @apply inline-block h-6 w-6 me-2;
   }
-  .schedule-left > .timing > span {
+  .schedule-left > .timing > .placeholder {
+    @apply w-36 md:w-auto me-2;
+  }
+  .schedule-left > .timing > .time {
     @apply text-primary;
   }
-  .schedule-left > button {
+  .schedule-left > .btn {
     @apply flex items-center justify-between gap-3;
+  }
+  .schedule-left > .btn > img {
+    @apply inline-block h-5 w-3.5;
   }
   .schedule-left > .small {
     @apply text-xs font-light text-black mt-4;
@@ -480,8 +500,11 @@
   .choosing-container > li {
     @apply w-full xl:w-md;
   }
-  .choosing-container > li > button {
+  .choosing-container > li > .btn {
     @apply flex items-center justify-between gap-3;
+  }
+  .choosing-container > li > .btn > img {
+    @apply inline-block h-5 w-3.5;
   }
   .choosing-card > h3 > svg {
     @apply me-2 inline-block h-8 w-8;
@@ -573,13 +596,13 @@
   .cta-actions {
     @apply flex justify-start items-center gap-2 flex-wrap;
   }
-  .cta-actions > button {
+  .cta-actions > .btn {
     @apply flex items-center justify-between gap-3;
   }
-  .cta-actions > svg {
+  .cta-actions > .btn > img {
     @apply inline-block h-6 w-6;
   }
-  .cta-actions > button > span {
+  .cta-actions > .btn > span {
     @apply text-start;
   }
 
@@ -884,15 +907,20 @@
 
   /* About Us CTA Section */
   .about-cta {
-    @apply my-20 container mx-auto bg-black py-16 px-4 md:px-8 rounded-none xl:rounded-3xl text-center;
+    @apply my-20 container mx-auto bg-black py-16 px-4 md:px-8 rounded-sm relative;
+  }
+  .about-cta::after {
+    content: "";
+    @apply absolute top-0 right-0 h-full w-[492px] z-10 opacity-30 md:opacity-100;
+    background: url("/cta-circle.svg") top/cover no-repeat;
   }
   .about-cta > h2 {
-    @apply text-white mb-6 max-w-3xl mx-auto;
+    @apply text-white mb-6 max-w-3xl;
   }
   .about-cta > p {
-    @apply text-white text-lg mb-8 max-w-3xl mx-auto;
+    @apply text-white mb-8 max-w-3xl;
   }
-  .about-cta > .cta-actions {
-    @apply justify-center my-16;
+  .about-cta > p > span {
+    @apply text-primary;
   }
 }

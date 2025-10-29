@@ -42,16 +42,18 @@ export default async function Hero() {
           />
 
           <figure>
-            <Image src={Profile} alt="CA Neetu" width={400} height={400} />
+            <Image src={Profile} alt="Neetu Jain" width={400} height={400} />
             <figcaption>
-              <strong>CA Neetu</strong>
-              <br />- Founder
+              <strong>Neetu Jain</strong>
+              <br />
+              Your Consultant
             </figcaption>
           </figure>
 
           <p className="hero-right-title">
-            <span>CA Neetu</span>
-            <br /> Founder
+            <span>Neetu Jain</span>
+            <br />
+            Chartered Accountant
           </p>
         </div>
       </div>

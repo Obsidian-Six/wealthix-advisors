@@ -174,7 +174,7 @@
     @apply max-w-[663px] mb-5 text-black;
   }
   .hero-left > p {
-    @apply text-gray-dark text-xs md:text-sm font-semibold uppercase max-w-xl mb-4;
+    @apply text-gray-dark text-xs md:text-sm font-semibold max-w-xl mb-4;
   }
   .hero-left > .btn {
     @apply flex items-center justify-between gap-3;
@@ -193,7 +193,7 @@
   }
 
   .hero-right-container > .hero-right-title {
-    @apply absolute -bottom-8 sm:bottom-0 right-0 px-8 py-2 bg-primary text-white rounded-full shadow-lg z-40 text-xs md:text-sm;
+    @apply absolute -bottom-8 left-1/2 -translate-x-1/2 min-w-60  px-8 py-2 bg-primary text-white rounded-full shadow-lg z-40 text-center text-xs md:text-sm;
   }
   .hero-right-container > .hero-right-title > span {
     @apply text-sm md:text-base font-medium;
@@ -455,7 +455,7 @@
     @apply block absolute -top-[20%] left-1/2 transform -translate-x-1/2 rounded-full bg-primary text-white text-base w-24 h-24 text-center font-bold font-clash text-base/[150%];
   }
   .compliant-card {
-    @apply bg-black-40 relative rounded-3xl h-40 w-2xs p-4 backdrop-blur-md;
+    @apply bg-black relative rounded-3xl h-40 w-2xs p-4 backdrop-blur-md;
   }
 
   /* Removed as per new design
@@ -922,5 +922,34 @@
   }
   .about-cta > p > span {
     @apply text-primary;
+  }
+
+  /* Services Page Hero Section */
+  .services-hero {
+    @apply container min-h-[700px] mx-auto flex flex-col xl:flex-row justify-between items-center gap-16 xl:gap-4 px-4 md:px-16 py-8 rounded-none xl:rounded-xl relative;
+    background: radial-gradient(
+        100% 200% at 100% 0%,
+        rgba(0, 173, 239, 0) 0%,
+        rgba(0, 173, 239, 0.2) 100%
+      ),
+      linear-gradient(0deg, #080808, #080808);
+  }
+  .services-hero-left {
+    @apply max-w-2xl;
+  }
+  .services-hero-left > p {
+    @apply text-white text-sm mt-8 mb-16 max-w-lg;
+  }
+  .services-hero > .services-hero-left > .btn {
+    @apply flex items-center justify-between gap-3;
+  }
+  .services-hero > .services-hero-left > .btn > img {
+    @apply inline-block h-6 w-6;
+  }
+  .services-hero > .services-hero-left > .btn > span {
+    @apply text-start;
+  }
+  .services-hero-right {
+    @apply lg:w-[530px] lg:h-[470px];
   }
 }

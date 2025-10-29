@@ -747,4 +747,152 @@
     content: "";
     @apply mx-0;
   }
+
+  /* About Page Hero Section */
+  .about-hero {
+    @apply container min-h-[700px] xl:min-h-[500px] mx-auto flex flex-col xl:flex-row justify-start xl:justify-between items-center xl:items-start px-4 md:px-16 py-8 relative;
+  }
+  .about-hero:before {
+    content: "";
+    @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-1/2 -z-40 bg-primary;
+  }
+  .about-hero::after {
+    content: "";
+    @apply absolute -bottom-1.5 sm:-bottom-2 left-1/2 -translate-x-1/2 h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] xl:h-[500px] xl:w-[500px] -z-30;
+    background: url("/profile.png") top/contain no-repeat;
+  }
+  .about-hero > h1 {
+    @apply text-black max-w-2xs;
+  }
+  .about-hero > p {
+    @apply text-black text-[20px] max-w-md;
+  }
+  .about-hero > p > span {
+    @apply text-primary;
+  }
+
+  /*About Page What We Do Section */
+  .about-wwd {
+    @apply my-20 container mx-auto p-4 md:p-8 flex flex-col lg:flex-row justify-center items-center  lg:items-start flex-wrap gap-4;
+  }
+  .about-wwd > h2 {
+    @apply w-full mb-8 md:mb-16 text-center;
+  }
+  .about-wwd-left {
+    @apply h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] lg:h-[500px] lg:w-[500px];
+  }
+  .about-wwd-right {
+    @apply max-w-2xl;
+  }
+  .about-wwd-right > p {
+    @apply text-base mb-8 last:mb-4 text-center lg:text-start;
+  }
+  .about-wwd-right > p > span {
+    @apply text-primary;
+  }
+  .about-wwd-right > ul {
+    @apply list-none;
+  }
+  .about-wwd-right > ul > li {
+    @apply bg-[#E6F7FD] p-4 mb-2 rounded-xl;
+  }
+  .about-wwd-right > ul > li > svg {
+    @apply inline-block h-6 w-6 me-2;
+  }
+
+  /* About Page Core Values Section */
+  .about-core-values {
+    @apply my-20 container mx-auto p-4 md:p-8 text-center bg-[#F8F8F8];
+  }
+  .about-core-values > h2 {
+    @apply text-black;
+  }
+  .about-core-values > p {
+    @apply text-black text-sm font-semibold mb-16 text-center;
+  }
+  .about-core-values-container {
+    @apply flex justify-center items-center flex-wrap gap-4 md:gap-8;
+  }
+  .about-core-value-card {
+    @apply w-xl bg-white p-10 text-start rounded-xl border;
+  }
+  .about-core-value-card > .core-value-card-icon {
+    @apply h-16 w-16 mb-4 rounded-xl flex justify-center items-center;
+  }
+  .about-core-value-card > .core-value-card-icon > img {
+    @apply inline-block h-8 w-8;
+  }
+  .about-core-value-card > h3 {
+    @apply text-black font-semibold text-base mb-4;
+  }
+  .about-core-value-card > p {
+    @apply text-black text-sm font-normal;
+  }
+  .about-core-value-card.integrity {
+    @apply border-[#f6f8e0];
+  }
+  .about-core-value-card.integrity > .core-value-card-icon {
+    @apply bg-[#f6f8e0];
+  }
+  .about-core-value-card.confidentiality {
+    @apply border-[#e4fdff];
+  }
+  .about-core-value-card.confidentiality > .core-value-card-icon {
+    @apply bg-[#e4fdff];
+  }
+  .about-core-value-card.accuracy {
+    @apply border-[#feeff0];
+  }
+  .about-core-value-card.accuracy > .core-value-card-icon {
+    @apply bg-[#feeff0];
+  }
+  .about-core-value-card.growth {
+    @apply border-[#e1fae6];
+  }
+  .about-core-value-card.growth > .core-value-card-icon {
+    @apply bg-[#e1fae6];
+  }
+
+  /* About Page Mission Section */
+  .about-mission {
+    @apply my-20 container mx-auto p-4 md:p-8 flex justify-center items-center flex-wrap gap-8;
+  }
+  .about-mission > h2 {
+    @apply invisible absolute top-0 -left-[9999px];
+  }
+  .about-mission-left {
+    @apply w-md h-[512px];
+  }
+  .about-mission-right {
+    @apply max-w-md;
+  }
+  .about-mission-card {
+    @apply bg-white p-8 first:border-b first:border-gray-dark;
+  }
+  .about-mission-card > .mission-card-icon {
+    @apply h-16 w-16 mb-4 rounded-full flex justify-center items-center bg-primary;
+  }
+  .about-mission-card > .mission-card-icon > img {
+    @apply inline-block h-8 w-8;
+  }
+  .about-mission-card > h3 {
+    @apply text-black font-bold text-lg mb-4;
+  }
+  .about-mission-card > p {
+    @apply text-black text-[18px] font-normal;
+  }
+
+  /* About Us CTA Section */
+  .about-cta {
+    @apply my-20 container mx-auto bg-black py-16 px-4 md:px-8 rounded-none xl:rounded-3xl text-center;
+  }
+  .about-cta > h2 {
+    @apply text-white mb-6 max-w-3xl mx-auto;
+  }
+  .about-cta > p {
+    @apply text-white text-lg mb-8 max-w-3xl mx-auto;
+  }
+  .about-cta > .cta-actions {
+    @apply justify-center my-16;
+  }
 }

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Choose from "@/public/choose.png";
+import Choose from "@/public/choose.jpg";
 
 export default async function Choosing() {
   return (

@@ -7,7 +7,7 @@ export default async function Hero() {
     <section className="hero">
       <div className="hero-left">
         <h1>
-          <span>AI-Powered</span> <br /> Accounting for Smarter Business
+          <span>AI-Powered</span> Accounting <br /> for Smarter Business
           Decisions
         </h1>
         <p>

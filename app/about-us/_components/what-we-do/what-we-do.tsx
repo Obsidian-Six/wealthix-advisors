@@ -15,12 +15,12 @@ export default async function WhatWeDo() {
         <figcaption>What We Do at Wealthix Advisors</figcaption>
       </figure>
       <div className="about-wwd-right">
-        <p>
+        <p className="about-wwd-intro">
           At <span>Wealthix Advisors</span>, we provide tailored solutions for
           startups, SMEs, and large enterprises, ensuring compliance, accuracy,
           and strategic growth.
         </p>
-        <p>Our Services Include</p>
+        <p className="about-wwd-services-title">Our Services Include</p>
         <ul>
           <li>
             <svg

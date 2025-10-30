@@ -1,5 +1,5 @@
+import CTA from "../_components/cta/cta";
 import CoreValues from "./_components/core-values/core-values";
-import CTA from "./_components/cta/cta";
 import Hero from "./_components/hero/hero";
 import Mission from "./_components/mission/mission";
 import WhatWeDo from "./_components/what-we-do/what-we-do";

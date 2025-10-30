@@ -19,54 +19,59 @@ export default async function Footer() {
         </figure>
         <ul className="footer-social-links">
           <li>
-            <a href="#" className="footer-social-link">
+            <a
+              href="http://www.youtube.com/@wealthixadvisors"
+              target="_blank"
+              className="footer-social-link"
+            >
               <svg
-                width="20"
-                height="19"
-                viewBox="0 0 20 19"
-                fill="none"
+                fill="#ffffff"
+                height="20px"
+                width="20px"
+                version="1.1"
+                id="Layer_1"
                 xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                viewBox="-271 311.2 256 179.8"
+                xmlSpace="preserve"
               >
-                <path
-                  d="M19.0476 9.74781C19.0476 4.75353 14.9943 0.700195 10 0.700195C5.00573 0.700195 0.952393 4.75353 0.952393 9.74781C0.952393 14.1269 4.06477 17.7731 8.19049 18.6145V12.4621H6.38096V9.74781H8.19049V7.48591C8.19049 5.73972 9.61096 4.31924 11.3572 4.31924H13.6191V7.03353H11.8095C11.3119 7.03353 10.9048 7.44067 10.9048 7.93829V9.74781H13.6191V12.4621H10.9048V18.7502C15.4738 18.2978 19.0476 14.4435 19.0476 9.74781Z"
-                  fill="white"
+                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#" className="footer-social-link">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <mask
-                  id="mask0_16_461"
-                  maskUnits="userSpaceOnUse"
-                  x="0"
-                  y="0"
-                  width="20"
-                  height="20"
-                >
-                  <path
-                    d="M0.742065 0.158203H19.9247V19.3408H0.742065V0.158203Z"
-                    fill="white"
-                  />
-                </mask>
-                <g mask="url(#mask0_16_461)">
-                  <path
-                    d="M15.8484 1.05664H18.7902L12.364 8.42003L19.9247 18.4416H14.0055L9.36602 12.3648L4.0634 18.4416H1.11887L7.99172 10.563L0.742065 1.05801H6.81199L10.9993 6.61138L15.8484 1.05664ZM14.8139 16.6768H16.4444L5.92137 2.72964H4.17301L14.8139 16.6768Z"
-                    fill="white"
-                  />
+
+                <g id="SVGRepo_iconCarrier">
+                  <path d="M-59.1,311.2h-167.8c0,0-44.1,0-44.1,44.1v91.5c0,0,0,44.1,44.1,44.1h167.8c0,0,44.1,0,44.1-44.1v-91.5 C-15,355.3-15,311.2-59.1,311.2z M-177.1,450.3v-98.5l83.8,49.3L-177.1,450.3z" />{" "}
                 </g>
               </svg>
             </a>
           </li>
           <li>
-            <a href="#" className="footer-social-link">
+            <a
+              href="http://linkedin.com/build-relation/newsletter-follow?entityUrn=7298946770057752576"
+              target="_blank"
+              className="footer-social-link"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="20px"
+                viewBox="0 -960 960 960"
+                width="20px"
+                fill="#fff"
+              >
+                <path d="M168-144q-29.7 0-50.85-21.15Q96-186.3 96-216v-528q0-29.7 21.15-50.85Q138.3-816 168-816h624q29.7 0 50.85 21.15Q864-773.7 864-744v528q0 29.7-21.15 50.85Q821.7-144 792-144H168Zm0-72h624v-528H168v528Zm72-96h480v-72H240v72Zm0-144h168v-216H240v216Zm240 0h240v-72H480v72Zm0-144h240v-72H480v72ZM168-216v-528 528Z" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="http://linkedin.com/company/wealthixadvisors"
+              target="_blank"
+              className="footer-social-link"
+            >
               <svg
                 width="19"
                 height="19"
@@ -82,7 +87,11 @@ export default async function Footer() {
             </a>
           </li>
           <li>
-            <a href="#" className="footer-social-link">
+            <a
+              href="http://instagram.com/wealthixadvisors"
+              target="_blank"
+              className="footer-social-link"
+            >
               <svg
                 width="18"
                 height="22"
@@ -110,8 +119,8 @@ export default async function Footer() {
                 United Arab Emirates
               </p>
               <p>
-                India - Office No 108, Ist Floor, Pink City Tower-2,
-                Jaipur, Rajasthan
+                India - Office No 108, Ist Floor, Pink City Tower-2, Jaipur,
+                Rajasthan
               </p>
             </address>
           </div>

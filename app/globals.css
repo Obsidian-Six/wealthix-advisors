@@ -174,7 +174,8 @@
     @apply max-w-[663px] mb-8 text-black;
   }
   .hero-left > p {
-    @apply text-gray-dark text-xs/[150%] md:text-sm font-semibold max-w-xl mb-8;
+    @apply text-gray-dark text-xs md:text-sm font-semibold max-w-xl mb-8;
+    line-height: 150%;
   }
   .hero-left > .btn {
     @apply flex items-center justify-between gap-3;
@@ -200,7 +201,7 @@
   }
   /* Hero highlights rotator (single-box) */
   .hero-right-highlights {
-    @apply list-none text-white-85 text-xs md:text-sm font-medium absolute -top-16 -left-1/2 sm:-top-8   sm:-left-1/4 md:-left-1/3 overflow-hidden rounded-[20px] p-1 z-40 w-40 h-28 md:w-56 md:h-32;
+    @apply list-none text-white-85 text-xs md:text-sm font-medium absolute -top-16 -left-1/2 sm:-top-8   sm:-left-1/4 md:-left-1/3 lg:-top-16 lg:-left-1/5 2xl:-top-8 2xl:-left-1/3 overflow-hidden rounded-[20px] p-1 z-40 w-40 h-28 md:w-56 md:h-32;
   }
   .hero-highlight {
     @apply h-full w-full p-4 md:p-5 rounded-[20px] overflow-hidden bg-primary shadow-lg transition-colors duration-300 ease-out;
@@ -257,7 +258,7 @@
     @apply inline-block h-8 w-8 me-2;
   }
   .core-services-card p {
-    @apply text-white text-sm/[150%] font-normal ms-8;
+    @apply text-white text-sm/[150%] font-normal ms-12;
   }
   .core-services::before,
   .core-services::after {
@@ -293,17 +294,13 @@
 
   /* E Invoicing Section Styles */
   .e-invoicing {
-    @apply my-20 container bg-black mx-auto p-4 md:p-8 md:px-16 relative overflow-hidden rounded-none lg:rounded-lg;
+    @apply my-20 container bg-black mx-auto px-4 py-8 md:p-16 relative overflow-hidden rounded-none lg:rounded-lg flex flex-row justify-center gap-8 md:gap-32 items-center flex-wrap;
   }
-  .e-invoicing::after {
-    content: "";
-    @apply absolute top-1/2 right-0 z-40 h-4/5 w-[980px] rounded-full translate-x-1/2 -translate-y-1/2 hidden xl:block;
-    background: url("/e-invoicing.jpg") center/cover no-repeat;
-  }
-  .e-invoicing > h2 {
+
+  .e-invoicing-left > h2 {
     @apply max-w-2xl mb-8 text-white;
   }
-  .e-invoicing > p {
+  .e-invoicing-left > p {
     @apply text-white text-[20px] md:text-lg mb-16 max-w-2xl;
   }
   .e-invoicing-list {
@@ -312,8 +309,11 @@
   .e-invoicing-list > li {
     @apply p-2 border-t border-gray-light-50 last:border-b text-white text-sm md:text-base;
   }
-  .e-invoicing > button {
+  .e-invoicing-left > button {
     @apply flex items-center justify-between gap-3;
+  }
+  .e-invoicing-right {
+    @apply w-[300px] h-[300px] md:w-[500px] md:h-[500px];
   }
 
   /* Schedule Section Styles */

@@ -64,22 +64,28 @@
   .nav-toggle {
     @apply inline-flex items-center justify-center md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary;
   }
-  /* When opened, show menu as a vertical panel on small screens with slide-in */
+  /* When opened on mobile, show menu as a left sidebar (full height) */
   nav[data-opened="true"] > ul {
-    @apply flex flex-col absolute left-0 top-full w-full bg-white shadow-md p-4 gap-2 md:static md:w-auto md:bg-transparent md:shadow-none md:flex-row md:p-0 z-50;
-    animation: nav-slide-in 200ms ease-out both;
+    @apply flex flex-col justify-start items-start bg-white shadow-md p-4 gap-2 z-50 md:static md:w-auto md:bg-transparent md:shadow-none md:flex-row md:p-0;
+    position: fixed;
+    top: var(--nav-offset, 0px);
+    left: 0;
+    width: var(--nav-drawer-width, 80vw);
+    height: calc(100vh - var(--nav-offset, 0px));
+    overflow-y: auto;
+    animation: nav-drawer-in 220ms ease-out both;
   }
-  @keyframes nav-slide-in {
+  @keyframes nav-drawer-in {
     from {
-      transform: translateY(-12px);
+      transform: translateX(-100%);
       opacity: 0;
     }
     to {
-      transform: translateY(0);
+      transform: translateX(0);
       opacity: 1;
     }
   }
-  nav > ul > li {
+  header > nav > ul > li {
     @apply py-4 md:py-0 border-b md:border-0 last:border-b-0 border-gray-light w-full md:w-auto;
   }
 
@@ -89,9 +95,14 @@
 
   nav > ul > li > a > svg {
     @apply inline-block h-6 w-6 me-2 md:hidden;
+    fill: var(--color-black);
   }
   nav > ul > li > a.active {
-    @apply text-primary underline underline-offset-[16%] decoration-[10.5%];
+    @apply text-primary scale-110 md:underline md:underline-offset-[16%] md:decoration-[10.5%];
+  }
+  nav > ul > li > a.active > svg {
+    @apply text-primary w-7 h-7;
+    fill: var(--color-primary);
   }
   main {
     @apply mt-16 sm:mt-28 overflow-hidden;
@@ -154,7 +165,8 @@
     @apply hidden md:hidden; /* hidden by default, and not used on md+ */
   }
   nav[data-opened="true"] .nav-overlay {
-    @apply block fixed left-0 right-0 top-0 bottom-0 bg-black/40; /* backdrop below header/banner */
+    @apply block fixed right-0 top-0 bottom-0 bg-black/40; /* backdrop below header/banner */
+    left: var(--nav-drawer-width, 80vw);
     z-index: 40; /* under menu panel (z-50) but above page */
     animation: overlay-fade 200ms ease-out both;
   }

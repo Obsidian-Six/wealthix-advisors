@@ -12,16 +12,20 @@ export default function NavResponsive() {
     if (!nav || !toggle || !menu) return;
 
     const positionOverlay = () => {
-      if (!overlay) return;
       const header = document.querySelector<HTMLElement>("header");
       const banner = document.querySelector<HTMLElement>(".nav-banner");
       const headerBottom = header?.getBoundingClientRect().bottom ?? 0;
       const bannerBottom = banner?.getBoundingClientRect().bottom ?? 0;
       const top = Math.max(headerBottom, bannerBottom, 0);
-      overlay.style.top = `${top}px`;
-      overlay.style.left = "0";
-      overlay.style.right = "0";
-      overlay.style.bottom = "0";
+      // Set CSS var for menu/overlay offset
+      (nav as HTMLElement).style.setProperty("--nav-offset", `${top}px`);
+      // Adjust overlay positioning (leave width to CSS via --nav-drawer-width)
+      if (overlay) {
+        overlay.style.top = `${top}px`;
+        overlay.style.left = ""; // let CSS control left based on drawer width
+        overlay.style.right = ""; // let CSS control right based on drawer width
+        overlay.style.bottom = "0";
+      }
     };
 
     const open = () => {

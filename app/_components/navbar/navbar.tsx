@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/public/logo.png";
 import NavResponsive from "./nav-responsive";
+import NavActive from "./nav-active";
 
 export default function Navbar() {
   return (
@@ -39,7 +40,7 @@ export default function Navbar() {
       </button>
       <ul id="primary-menu">
         <li>
-          <Link href={"/home"}>
+          <Link id="nav-link-home" href={"/"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -53,7 +54,7 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
-          <Link href={"/services"}>
+          <Link id="nav-link-services" href={"/services"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -67,7 +68,7 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
-          <Link href={"/packages"}>
+          <Link id="nav-link-packages" href={"/packages"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -81,7 +82,7 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
-          <Link href={"/about-us"}>
+          <Link id="nav-link-about-us" href={"/about-us"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -95,7 +96,7 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
-          <Link href={"/blogs"}>
+          <Link id="nav-link-blogs" href={"/blogs"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -109,7 +110,7 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
-          <Link href={"/contact"}>
+          <Link id="nav-link-contact" href={"/contact"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -125,6 +126,8 @@ export default function Navbar() {
       </ul>
       {/* Client helper to handle responsive toggling via data-opened */}
       <NavResponsive />
+      {/* Client helper to set active link based on route */}
+      <NavActive />
       {/* Overlay for mobile when menu is open; click to close */}
       <div className="nav-overlay" aria-hidden="true" />
     </nav>

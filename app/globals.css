@@ -1017,4 +1017,63 @@
   .services-trusted-container > .services-trusted-container-footer {
     @apply text-white text-sm/[150%] md:text-base/[150%] font-normal mb-8;
   }
+
+  /* Services Benefits Section */
+  .services-benefits {
+    @apply my-20 container mx-auto p-4 md:p-16;
+  }
+  .services-benefits > p {
+    @apply text-xl text-center font-bold max-w-5xl mx-auto;
+  }
+  .services-benefits > p > span {
+    @apply text-primary;
+  }
+
+  /* Services Page Offer Section */
+  .services-offer {
+    @apply my-20 container mx-auto p-4 md:p-16;
+  }
+  .services-offer > h2 {
+    @apply text-xl text-center font-bold max-w-5xl mx-auto;
+  }
+  .services-offer > p > span {
+    @apply text-primary;
+  }
+  .services-offer-card-container {
+    @apply mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 justify-items-center;
+  }
+  .services-offer-card {
+    @apply w-xs h-[320px] sm:h-[512px] sm:w-lg rounded-3xl overflow-hidden relative px-4 sm:px-12 py-6 sm:py-14 bg-black flex flex-col justify-end items-start;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 21.4%,
+      rgba(0, 0, 0, 0.8) 99.64%
+    );
+  }
+  .services-offer-card::before {
+    content: "";
+    @apply absolute top-0 left-1/2 -translate-x-1/2 h-full w-full -z-40;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .services-offer-card.bookkeeping::before {
+    background-image: url("/bookkeeping.png");
+  }
+  .services-offer-card.financial-reporting::before {
+    background-image: url("/financial-reporting.png");
+  }
+  .services-offer-card.tax-preparation::before {
+    background-image: url("/tax-preparation.png");
+  }
+  .services-offer-card.cashflow-management::before {
+    background-image: url("/cashflow-management.png");
+  }
+  .services-offer-card > .services-offer-card-title {
+    @apply text-white text-base sm:text-lg font-semibold mb-4;
+  }
+  .services-offer-card > .services-offer-card-description {
+    @apply text-xs sm:text-[18px]/[150%] font-normal text-white;
+    box-shadow: 0px 4px 4px 0px #00000040;
+  }
 }

@@ -4,19 +4,63 @@ import Image from "next/image";
 export default async function Footer() {
   return (
     <>
-      <section className="footer-top">
-        <figure className="footer-logo">
-          <Image
-            src={LogoSquare}
-            alt="Wealthix Advisors"
-            width={200}
-            height={120}
-            priority
-          />
-          <figcaption className="footer-logo-caption">
-            Wealthix Advisors
-          </figcaption>
-        </figure>
+      <figure className="footer-logo">
+        <Image
+          src={LogoSquare}
+          alt="Wealthix Advisors"
+          width={200}
+          height={120}
+          priority
+        />
+        <figcaption className="footer-logo-caption">
+          Wealthix Advisors
+        </figcaption>
+      </figure>
+      <section className="footer-address">
+        <h3>Our Locations</h3>
+        <address>
+          <p>
+            Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United
+            Arab Emirates
+          </p>
+          <p>
+            India - Office No 108, Ist Floor, Pink City Tower-2, Jaipur,
+            Rajasthan
+          </p>
+        </address>
+      </section>
+      <section className="footer-services">
+        <h2>Services</h2>
+        <ul className="footer-services-list">
+          <li>
+            <a href="#" className="footer-services-link">
+              Corporate Tax Services
+            </a>
+          </li>
+          <li>
+            <a href="#" className="footer-services-link">
+              VAT Registration & Filing
+            </a>
+          </li>
+          <li>
+            <a href="#" className="footer-services-link">
+              Accounting & Bookkeeping
+            </a>
+          </li>
+          <li>
+            <a href="#" className="footer-services-link">
+              Auditing Services
+            </a>
+          </li>
+          <li>
+            <a href="#" className="footer-services-link">
+              Compliance Advisory
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section className="footer-social">
+        <h2>Follow Us</h2>
         <ul className="footer-social-links">
           <li>
             <a
@@ -108,97 +152,65 @@ export default async function Footer() {
           </li>
         </ul>
       </section>
-      <section className="footer-middle">
-        <div className="footer-middle-left">
-          <h2 className="invisible">Address and Contact Information</h2>
-          <div className="footer-address">
-            <h3>Address</h3>
-            <address>
-              <p>
-                Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai,
-                United Arab Emirates
-              </p>
-              <p>
-                India - Office No 108, Ist Floor, Pink City Tower-2, Jaipur,
-                Rajasthan
-              </p>
-            </address>
-          </div>
-          <div className="footer-contact">
-            <h3>Contact Us</h3>
-            <div className="footer-contact-block">
-              <h4>Business Inquiries</h4>
-              <address>
-                <a
-                  href="tel:+971504367430"
-                  className="footer-contact-block-link"
-                >
-                  {" "}
-                  +971 504367430
-                </a>
-                <a
-                  href="mailto:info@wealthixadvisors.ae"
-                  className="footer-contact-block-link"
-                >
-                  info@wealthixadvisors.ae
-                </a>
-              </address>
-            </div>
-            <div className="footer-contact-block">
-              <h4>Reception</h4>
-              <address>
-                <a href="tel:+97142690673">+971 4 2690673</a>
-              </address>
-            </div>
-            <div className="footer-contact-block">
-              <h4>Customer Support / Complaints</h4>
-              <address>
-                <a href="tel:+97142690673">+971 504367430</a>
-                <a href="mailto:support@wealthixadvisors.ae">
-                  support@wealthixadvisors.ae
-                </a>
-              </address>
-            </div>
-            <div className="footer-contact-block">
-              <h4>Working Hours</h4>
-              <address>
-                <p>Monday - Friday: 8:30 AM - 6:00 PM</p>
-                <p>Saturday - Sunday: Closed</p>
-              </address>
-            </div>
-          </div>
-        </div>
-        <div className="footer-middle-right">
-          <h2>Services</h2>
-          <ul className="footer-services">
-            <li>
-              <a href="#" className="footer-services-link">
-                Corporate Tax Services
-              </a>
-            </li>
-            <li>
-              <a href="#" className="footer-services-link">
-                VAT Registration & Filing
-              </a>
-            </li>
-            <li>
-              <a href="#" className="footer-services-link">
-                Accounting & Bookkeeping
-              </a>
-            </li>
-            <li>
-              <a href="#" className="footer-services-link">
-                Auditing Services
-              </a>
-            </li>
-            <li>
-              <a href="#" className="footer-services-link">
-                Compliance Advisory
-              </a>
-            </li>
-          </ul>
-        </div>
+
+      <section className="footer-contact">
+        <h2>Contact Us</h2>
+        <ul className="footer-contact-list">
+          <li>
+            <a href="tel:+971504367430" className="footer-contact-link">
+              <Image
+                src={"/icons/call.svg"}
+                alt="Phone Icon"
+                width={24}
+                height={24}
+              />
+              +971 50 436 7430
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:info@wealthixadvisors.ae"
+              className="footer-contact-link"
+            >
+              <Image
+                src={"/icons/mail.svg"}
+                alt="Mail Icon"
+                width={24}
+                height={24}
+              />
+              info@wealthixadvisors.ae
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:support@wealthixadvisors.ae"
+              className="footer-contact-link"
+            >
+              <Image
+                src={"/icons/support.svg"}
+                alt="Support Email Icon"
+                width={24}
+                height={24}
+              />
+              support@wealthixadvisors.ae
+            </a>
+          </li>
+          <li>
+            <p className="footer-contact-hours">
+              <Image
+                src={"/icons/clock.svg"}
+                alt="Clock Icon"
+                width={24}
+                height={24}
+              />
+              Monday – Friday: 8:30 AM – 6:00 PM
+              <br />
+              Saturday – Sunday: Closed
+            </p>
+          </li>
+        </ul>
       </section>
+
       <section className="footer-bottom">
         <h2 className="invisible">Copyright and Links</h2>
         <p className="footer-copyright">

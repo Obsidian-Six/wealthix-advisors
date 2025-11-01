@@ -146,7 +146,7 @@
   }
 
   footer {
-    @apply bg-black;
+    @apply bg-black flex justify-center sm:justify-between xl:justify-evenly items-start flex-wrap py-8 px-4 md:px-16 gap-4;
   }
 }
 
@@ -714,74 +714,73 @@
   }
 
   /* Footer Styles */
-  .footer-top {
-    @apply container p-4 md:p-16 flex justify-between items-start flex-wrap gap-8;
-  }
   .footer-logo {
-    @apply w-[200px] h-32;
-  }
-  .footer-social-links {
-    @apply flex justify-end items-start gap-4 flex-wrap;
-  }
-
-  /* Footer Middle Styles */
-  .footer-middle {
-    @apply container flex justify-between items-start flex-wrap p-4 md:p-16 mb-8 gap-8 xl:gap-0;
-  }
-
-  /* Footer Middle Left Styles */
-  .footer-middle-left {
-    @apply flex flex-col md:flex-row gap-16 max-w-6xl;
-  }
-  .footer-middle-left > h2 {
-    @apply invisible absolute top-0 -left-[9999px];
+    @apply w-full h-auto sm:w-2/5 xl:w-[200px] xl:h-32;
   }
 
   /* Footer Address Styles */
   .footer-address {
-    @apply max-w-sm;
+    @apply w-full sm:w-2/5 xl:w-3xs;
   }
   .footer-address > h3 {
-    @apply text-[20px] font-semibold  font-clash text-primary mb-2;
+    @apply text-[20px] font-semibold  font-clash text-primary mb-4;
   }
   .footer-address > address > p {
-    @apply not-italic text-sm/[100%] font-normal text-white mb-2;
+    @apply not-italic text-sm font-normal text-white mb-2;
+  }
+
+  /* Footer Services Styles */
+  .footer-services {
+    @apply w-full sm:w-2/5 xl:w-3xs;
+  }
+  .footer-services > h2 {
+    @apply text-[20px] font-semibold font-clash text-primary mb-2;
+  }
+  .footer-services-list {
+    @apply list-none flex flex-col gap-4;
+  }
+  .footer-services-list > li > a {
+    @apply not-italic text-sm/[100%] font-normal text-white hover:underline focus:outline-none focus:underline transition duration-100;
+  }
+
+  /* Footer Social Links Styles */
+  .footer-social {
+    @apply w-full sm:w-2/5 xl:w-3xs;
+  }
+  .footer-social > h2 {
+    @apply text-[20px] font-semibold font-clash text-primary mb-2;
+  }
+  .footer-social-links {
+    @apply flex justify-start items-center gap-4 flex-wrap;
   }
 
   /* Footer Contact Styles */
   .footer-contact {
-    @apply w-full grid grid-cols-1 md:grid-cols-2 gap-4;
+    @apply w-full sm:w-2/5 xl:w-3xs;
   }
-  .footer-contact > h3 {
-    @apply w-full text-[20px] font-semibold font-clash text-primary mb-2 col-span-1 md:col-span-2;
-  }
-  .footer-contact-block {
-    @apply max-w-xs col-span-1;
-  }
-  .footer-contact-block > h4 {
-    @apply text-sm font-semibold font-clash text-white mb-2;
-  }
-  .footer-contact-block > address > a {
-    @apply block my-1 not-italic text-sm/[100%] font-normal text-white hover:underline focus:outline-none focus:underline transition duration-100;
-  }
-  .footer-contact-block > address > p {
-    @apply not-italic text-sm/[100%] font-normal text-white;
-  }
-
-  /* Footer Middle Right Styles */
-  .footer-middle-right > h2 {
+  .footer-contact > h2 {
     @apply text-[20px] font-semibold font-clash text-primary mb-2;
   }
-  .footer-services {
-    @apply list-none flex flex-col gap-4;
+  .footer-contact-list {
+    @apply list-none w-full;
   }
-  .footer-services > li > a {
-    @apply not-italic text-sm/[100%] font-normal text-white hover:underline focus:outline-none focus:underline transition duration-100;
+  .footer-contact-link {
+    @apply my-1 not-italic text-sm font-normal text-white hover:underline focus:outline-none focus:underline transition duration-100 flex justify-start items-center gap-2;
+  }
+  .footer-contact-link > img {
+    @apply inline-block h-6 w-6;
+  }
+  .footer-contact-hours {
+    @apply text-sm font-normal text-white my-1 flex justify-start items-center gap-2;
+  }
+
+  .footer-contact-hours > img {
+    @apply inline-block h-6 w-6;
   }
 
   /* Footer Bottom Styles */
   .footer-bottom {
-    @apply container mx-auto flex justify-center items-center flex-wrap gap-2 py-4 px-4 md:px-16;
+    @apply w-full flex justify-center items-center flex-wrap gap-2 py-4 px-4 md:px-16;
   }
   .footer-bottom > h2 {
     @apply invisible absolute top-0 -left-[9999px];

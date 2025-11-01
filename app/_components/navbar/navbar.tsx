@@ -110,7 +110,7 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
-          <Link id="nav-link-contact" href={"/contact"}>
+          <Link id="nav-link-contact" href={"/contact-us"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"

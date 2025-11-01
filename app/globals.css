@@ -159,6 +159,9 @@
   .btn[data-variant="outline"] {
     @apply bg-transparent bg-none border border-primary text-white;
   }
+  .divider {
+    @apply w-full h-px bg-gray-light my-4;
+  }
 
   /* Mobile nav overlay */
   .nav-overlay {
@@ -1151,5 +1154,99 @@
   }
   .packages-card > .packages-card-body > .packages-card-btn {
     @apply text-primary w-full rounded-xl hover:text-white;
+  }
+
+  /* Contact Us Page Hero Section */
+  .contact-hero {
+    @apply container min-h-[320px] mx-auto px-4 md:px-16 py-8 relative flex flex-col justify-center items-start;
+  }
+  .contact-hero::before {
+    content: "";
+    @apply absolute -top-0 left-1/2 -translate-x-1/2 w-screen h-full -z-40;
+    background: linear-gradient(
+      270deg,
+      rgba(0, 173, 239, 0) 48.32%,
+      #00adef 59.62%
+    );
+    @media (width <= 40rem) {
+      background: var(--color-primary);
+    }
+  }
+
+  .contact-hero::after {
+    content: "";
+    @apply absolute bottom-0 left-2/5  w-[60vw] h-full -z-50 hidden sm:block;
+    background: url("/contact-hero-bg.jpg") top/cover no-repeat;
+  }
+  .contact-hero > h1 {
+    @apply text-white text-lg max-w-md;
+  }
+  .contact-hero > p {
+    @apply text-white text-sm md:text-[18px]/[150%] max-w-sm lg:max-w-md mt-4;
+  }
+
+  /* Contact Us Page Details Section */
+  .contact-details {
+    @apply container my-20 mx-auto p-4 md:p-16 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-start gap-8;
+  }
+
+  .contact-address {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+  }
+  .contact-address > .contact-address-card {
+    @apply col-span-1 first:md:col-span-2;
+  }
+  .contact-address > .contact-address-card > .contact-icon {
+    @apply h-10 w-10 mb-4 rounded-lg bg-[#E4FDFF] flex justify-center items-center;
+  }
+  .contact-address > .contact-address-card > .contact-icon > img {
+    @apply inline-block h-6 w-6;
+  }
+  .contact-address > .contact-address-card > h3 {
+    @apply text-primary text-[18px] font-semibold mb-4;
+  }
+  .contact-address > .contact-address-card > address > p {
+    @apply text-black text-sm font-normal mb-2 not-italic;
+    line-height: 150%;
+  }
+  .contact-address > .divider {
+    @apply col-span-1 md:col-span-2;
+  }
+  .contact-address > .contact-social-links {
+    @apply flex justify-start items-center gap-2 col-span-1 md:col-span-2;
+  }
+  .contact-address > .contact-social-links > li > a {
+    @apply flex justify-center items-center rounded-full hover:bg-primary-10 h-12 w-12 transition-colors duration-200;
+  }
+  .contact-address > .contact-social-links > li > a > svg {
+    @apply inline-block h-8 w-8;
+  }
+
+  .contact-form {
+    @apply flex flex-col justify-start items-start bg-[#f9f9f9] rounded-3xl px-4 md:px-8 py-8 md:py-16 max-w-lg gap-4;
+  }
+  .contact-form > h3 {
+    @apply text-primary mb-4 font-medium text-lg font-clash;
+  }
+  .contact-form > form {
+    @apply w-full grid grid-cols-1 md:grid-cols-2 gap-4;
+  }
+  .contact-form > form > label {
+    @apply block text-black text-sm font-medium mb-4 focus-within:font-semibold col-span-2;
+  }
+  .contact-form > form > label:first-child,
+  .contact-form > form > label:nth-child(2) {
+    @apply md:col-span-1!;
+  }
+  .contact-form > form > label > input,
+  .contact-form > form > label > select,
+  .contact-form > form > label > textarea {
+    @apply w-full mt-2 p-3 rounded-lg bg-transparent text-black placeholder-gray-dark border border-gray-dark focus:outline-none focus:border-primary transition duration-200;
+  }
+  .contact-form > form > label > select > option {
+    @apply text-black bg-white;
+  }
+  .contact-form > form > button {
+    @apply col-span-2 flex items-center justify-between gap-3 max-w-3xs;
   }
 }

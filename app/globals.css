@@ -192,6 +192,52 @@
     @apply text-white text-sm font-clash hover:underline focus:outline-none focus:underline focus:scale-105  transition duration-100 ease-out;
   }
 
+  /* Generic modal styles */
+  .modal-overlay {
+    @apply fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4 overflow-y-auto;
+  }
+  .modal {
+    @apply relative; /* size to content so overlay outside is clickable */
+  }
+  .modal-card {
+    @apply relative bg-white rounded-3xl p-6 md:p-8 shadow-lg w-full max-w-lg;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    animation: modal-in 200ms ease-out both;
+  }
+  @keyframes modal-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px) scale(0.99);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  /* Modal form adopts the same grid/label/inputs styles */
+  .modal-form > form {
+    @apply w-full grid grid-cols-1 md:grid-cols-2 gap-4;
+  }
+  .modal-form > form > label {
+    @apply block text-black text-sm font-medium mb-4 focus-within:font-semibold col-span-2;
+  }
+  .modal-form > form > label:first-child,
+  .modal-form > form > label:nth-child(2) {
+    @apply md:col-span-1!;
+  }
+  .modal-form > form > label > input,
+  .modal-form > form > label > select,
+  .modal-form > form > label > textarea {
+    @apply w-full mt-2 p-3 rounded-lg bg-transparent text-black placeholder-gray-dark border border-gray-dark focus:outline-none focus:border-primary transition duration-200;
+  }
+  .modal-form > form > label > select > option {
+    @apply text-black bg-white;
+  }
+  .modal-form > form > button {
+    @apply col-span-2 flex items-center justify-between gap-3 max-w-3xs;
+  }
+
   /* Hero Section Styles */
   .hero {
     @apply container mx-auto h-auto xl:h-[600px] flex flex-col xl:flex-row items-center justify-between px-4 xl:px-16 py-8 xl:rounded-xl gap-32 xl:gap-4 relative;
